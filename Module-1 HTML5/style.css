@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Navigation */
+nav {
+    background-color: #333;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Welcome Banner */
+#welcomeBanner {
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.highlight {
+    background-color: yellow;
+    color: black;
+    padding: 5px;
+}
+
+/* Table */
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+}
+
+/* Images */
+.event-img {
+    width: 200px;
+    height: 150px;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+/* Form */
+form {
+    background-color: white;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+fieldset {
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+legend {
+    background-color: #333;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+#videoMessage {
+    color: green;
+    font-weight: bold;
+}
+
+/* Output Element */
+#outputMessage {
+    display: block;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border: 2px solid green;
+    border-radius: 5px;
+    font-weight: bold;
+    color: green;
+    min-height: 20px;
+}
+
+/* Geolocation Results */
+#location {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e3f2fd;
+    border: 2px solid #2196F3;
+    border-radius: 5px;
+    color: #1976D2;
+}
+
+/* Video Section */
+#video-promo video {
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+footer hr {
+    border: 1px solid white;
+    margin-bottom: 15px;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
