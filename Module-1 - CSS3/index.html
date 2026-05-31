@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Local Community Event Portal</title>
+
+    <!-- Task 5: Google Fonts Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Task 1: Internal Styles (Embedded in Head) -->
+    <style>
+        /* Task 1: Internal styles for body background */
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-attachment: fixed;
+        }
+    </style>
+
+    <!-- Task 1: External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+        <a href="help.html" target="_blank">Help</a>
+    </nav>
+
+    <!-- Main -->
+    <section id="home">
+
+        <!-- Welcome Banner -->
+        <div id="welcomeBanner">
+
+            <h1>Welcome to Community Event Portal</h1>
+
+            <p class="highlight">
+                Special Offer:
+                <span style="color:red; font-weight:bold;">
+                    Free entry for first 50 registrations!
+                </span>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Events Section -->
+    <section id="events">
+
+        <h2 class="highlight">Past Community Events</h2>
+
+        <!-- Image Gallery -->
+        <table border="1">
+
+            <tr>
+
+                <td>
+                    <img src="images/music.jpg"
+                        alt="Music Event"
+                        title="Music Event"
+                        class="event-img"
+                        ondblclick="enlargeImage(this)">
+
+                    <p>Music Festival</p>
+                </td>
+
+                <td>
+                    <img src="images/food.jpg"
+                        alt="Food Event"
+                        title="Food Event"
+                        class="event-img"
+                        ondblclick="enlargeImage(this)">
+
+                    <p>Food Carnival</p>
+                </td>
+
+                <td>
+                    <img src="images/sports.jpg"
+                        alt="Sports Event"
+                        title="Sports Event"
+                        class="event-img"
+                        ondblclick="enlargeImage(this)">
+
+                    <p>Sports Meet</p>
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    <img src="images/art.jpg"
+                        alt="Art Event"
+                        title="Art Event"
+                        class="event-img"
+                        ondblclick="enlargeImage(this)">
+
+                    <p>Art Exhibition</p>
+                </td>
+
+                <td>
+                    <img src="images/dance.jpg"
+                        alt="Dance Event"
+                        title="Dance Event"
+                        class="event-img"
+                        ondblclick="enlargeImage(this)">
+
+                    <p>Dance Show</p>
+                </td>
+
+                <td>
+                    <img src="images/book.jpg"
+                        alt="Book Event"
+                        title="Book Event"
+                        class="event-img"
+                        ondblclick="enlargeImage(this)">
+
+                    <p>Book Fair</p>
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- Registration Form Section -->
+    <section id="registration">
+
+        <h2>Event Registration</h2>
+
+        <form onsubmit="showConfirmation(event)">
+
+            <fieldset>
+                <legend>Participant Information</legend>
+
+                <label for="name">Name:</label>
+
+                <input type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                    autofocus>
+
+                <label for="email">Email:</label>
+
+                <input type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required>
+
+                <label for="phone">Phone:</label>
+
+                <input type="text"
+                    id="phone"
+                    placeholder="Enter 10 digit number"
+                    onblur="validatePhone()">
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Event Details</legend>
+
+                <label for="eventDate">Date:</label>
+
+                <input type="date"
+                    id="eventDate"
+                    required>
+
+                <label for="eventType">Event Type:</label>
+
+                <select id="eventType" onchange="displayFee()">
+
+                    <option value="">Select Event</option>
+
+                    <option value="Music">Music - ₹100</option>
+
+                    <option value="Sports">Sports - ₹200</option>
+
+                    <option value="Art">Art - ₹150</option>
+
+                </select>
+
+                <p id="feeDisplay"></p>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Message & Feedback</legend>
+
+                <label for="message">Your Message:</label>
+
+                <textarea id="message"
+                    placeholder="Enter your message or feedback"
+                    onkeyup="countCharacters()"></textarea>
+
+                <p>
+                    Character Count:
+                    <span id="charCount">0</span>
+                </p>
+
+            </fieldset>
+
+            <button type="submit" onclick="submitAlert()">
+                Register
+            </button>
+
+            <br><br>
+
+            <output id="outputMessage" aria-live="polite"></output>
+
+        </form>
+
+    </section>
+
+    <!-- Video Section -->
+    <section id="video-promo">
+
+        <h2>Event Promo Video</h2>
+
+        <video width="500"
+            controls
+            oncanplay="videoReady()"
+            poster="images/video-poster.jpg">
+
+            <source src="videos/sample.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <p id="videoMessage"></p>
+
+    </section>
+
+    <!-- Geolocation Section -->
+    <section id="geolocation">
+
+        <h2>Find Nearby Events</h2>
+
+        <button onclick="findLocation()">
+            Find Nearby Events
+        </button>
+
+        <p id="location"></p>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>Email: community@gmail.com</p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <hr>
+        <div>
+            <p>&copy; 2026 Community Event Portal. All rights reserved.</p>
+            <button onclick="clearPreferences()">
+                Clear Preferences
+            </button>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
