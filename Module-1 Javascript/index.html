@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Local Community Event Portal</title>
+
+    <!-- Task 5: Google Fonts Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Task 1: Internal Styles (Embedded in Head) -->
+    <style>
+        /* Task 1: Internal styles for body background */
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-attachment: fixed;
+        }
+        
+        /* Additional styles for new sections */
+        .api-load-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .api-load-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .demo-section {
+            margin: 30px 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .demo-section h3 {
+            color: #d63031;
+            margin-bottom: 15px;
+        }
+        
+        .visibility-demo-box, .display-demo-box {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        
+        .visibility-demo-box {
+            background: #ff6b6b;
+            visibility: visible;
+        }
+        
+        .display-demo-box {
+            background: #4ecdc4;
+            display: block;
+        }
+    </style>
+
+    <!-- Task 1: External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Task 14: jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#registration">Register</a>
+        <a href="#contact">Contact</a>
+        <a href="help.html" target="_blank">Help</a>
+    </nav>
+
+    <!-- Main -->
+    <section id="home">
+
+        <!-- Welcome Banner -->
+        <div id="welcomeBanner">
+
+            <h1>Welcome to Community Event Portal</h1>
+
+            <p class="highlight">
+                Special Offer:
+                <span style="color:red; font-weight:bold;">
+                    Free entry for first 50 registrations!
+                </span>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Events Section -->
+    <section id="events">
+
+        <h2 class="highlight">Upcoming Community Events</h2>
+
+        <!-- API Load Button for Task 9 -->
+        <div style="text-align: center;">
+            <button class="api-load-btn" onclick="CommunityPortal.loadEventsWithAsync()">
+                Load Events from API (Async/Await Demo)
+            </button>
+            <button class="api-load-btn" onclick="CommunityPortal.loadEventsWithThen()" style="background: linear-gradient(135deg, #e63946, #d63031);">
+                Load Events with Promise.then()
+            </button>
+        </div>
+
+        <!-- Task 7: Dynamic Events Container (populated by JavaScript) -->
+        <div id="events-container"></div>
+
+        <!-- Task 8: Event Filter Section -->
+        <div id="filter-section" style="margin: 20px 0; padding: 20px; background: rgba(214, 48, 49, 0.1); border-radius: 8px;">
+            <label for="categoryFilter" style="font-weight: bold;">Filter by Category:</label>
+            <select id="categoryFilter" style="margin: 0 10px; padding: 8px;">
+                <option value="">All Events</option>
+                <option value="Music">Music</option>
+                <option value="Sports">Sports</option>
+                <option value="Art">Art</option>
+                <option value="Food">Food</option>
+                <option value="Technology">Technology</option>
+            </select>
+            
+            <label for="eventSearch" style="font-weight: bold; margin-left: 20px;">Search Events:</label>
+            <input type="text" id="eventSearch" placeholder="Search by name (press Enter)" style="padding: 8px; margin: 0 10px;">
+        </div>
+
+        <!-- Image Gallery -->
+        <h2>Event Gallery</h2>
+        <table border="1">
+            <tr>
+                <td>
+                    <img src="images/music.jpg"
+                        alt="Music Event"
+                        title="Music Event"
+                        class="event-img"
+                        ondblclick="enlargeImage(this)">
+                    <p>Music Festival</p>
+                </td>
+                <td>
+                    <img src="images/food.jpg"
+                        alt="Food Event"
+                        title="Food Event"
+                        class="event-img"
+                        ondblclick="enlargeImage(this)">
+                    <p>Food Carnival</p>
+                </td>
+                <td>
+                    <img src="images/sports.jpg"
+                        alt="Sports Event"
+                        title="Sports Event"
+                        class="event-img"
+                        ondblclick="enlargeImage(this)">
+                    <p>Sports Meet</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="images/art.jpg"
+                        alt="Art Event"
+                        title="Art Event"
+                        class="event-img"
+                        ondblclick="enlargeImage(this)">
+                    <p>Art Exhibition</p>
+                </td>
+                <td>
+                    <img src="images/dance.jpg"
+                        alt="Dance Event"
+                        title="Dance Event"
+                        class="event-img"
+                        ondblclick="enlargeImage(this)">
+                    <p>Dance Show</p>
+                </td>
+                <td>
+                    <img src="images/book.jpg"
+                        alt="Book Event"
+                        title="Book Event"
+                        class="event-img"
+                        ondblclick="enlargeImage(this)">
+                    <p>Book Fair</p>
+                </td>
+            </tr>
+        </table>
+
+    </section>
+
+    <!-- Task 3: CSS Demo Section with ID Selector -->
+    <section id="mainHeader" style="background: linear-gradient(135deg, #d63031, #e63946); color: white; padding: 30px; margin: 20px; border-radius: 12px; text-align: center;">
+        <h1 style="color: white;">Main Event Header - ID Selector Demo</h1>
+        <p>This section uses <strong>#mainHeader</strong> ID selector as required in Task 3</p>
+    </section>
+
+    <!-- Task 8: Visibility vs Display Demo -->
+    <section class="demo-section">
+        <h3>Task 8: visibility: hidden vs display: none Comparison</h3>
+        
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <div style="flex: 1; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                <h4>visibility: hidden</h4>
+                <div style="background: #f0f0f0; padding: 15px;">
+                    <p>Text before hidden element</p>
+                    <div id="visibilityDemo" style="visibility: hidden; background: #ff6b6b; padding: 15px; margin: 10px 0; border-radius: 5px; color: white;">
+                        THIS ELEMENT IS visibility: hidden
+                    </div>
+                    <p>Text after hidden element - <strong>Notice the space above!</strong></p>
+                </div>
+                <button onclick="document.getElementById('visibilityDemo').style.visibility = 'visible'">Show Hidden</button>
+                <button onclick="document.getElementById('visibilityDemo').style.visibility = 'hidden'">Hide</button>
+            </div>
+            
+            <div style="flex: 1; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                <h4>display: none</h4>
+                <div style="background: #f0f0f0; padding: 15px;">
+                    <p>Text before hidden element</p>
+                    <div id="displayDemo" style="display: block; background: #4ecdc4; padding: 15px; margin: 10px 0; border-radius: 5px; color: white;">
+                        THIS ELEMENT IS display: block
+                    </div>
+                    <p>Text after element - <strong>Text moves when hidden!</strong></p>
+                </div>
+                <button onclick="document.getElementById('displayDemo').style.display = 'block'">Show</button>
+                <button onclick="document.getElementById('displayDemo').style.display = 'none'">Hide</button>
+            </div>
+        </div>
+        
+        <div style="margin-top: 15px; padding: 10px; background: #2c3e50; color: white; border-radius: 8px; text-align: center;">
+             <strong>DevTools Tip:</strong> Inspect these elements to see the difference! visibility:hidden takes space, display:none doesn't.
+        </div>
+    </section>
+
+    <!-- Task 9: Multi-Column Newspaper Layout -->
+    <section class="demo-section">
+        <h3>Task 9: Newspaper Style Multi-Column Layout</h3>
+        
+        <div style="column-count: 2; column-gap: 40px; column-rule: 3px solid #e63946; background: #fffbfb; padding: 25px; border-radius: 10px;">
+            <h3 style="column-span: all; text-align: center; margin-bottom: 20px;">Community News Weekly</h3>
+            
+            <p><strong>Annual Festival Announced!</strong> The Community Event Portal is excited to announce the annual Summer Festival will take place on June 15th, 2026. This year's theme is "Unity in Diversity" featuring cultural performances from over 20 local communities.</p>
+            
+            <p><strong>New Community Center Opening</strong> After months of renovation, the Downtown Community Center will reopen on March 1st with state-of-the-art facilities including a recording studio, digital arts lab, and expanded library space.</p>
+            
+            <p><strong>Volunteer Opportunities</strong> Looking to give back to the community? We're seeking volunteers for various positions including event coordinators, social media managers, and technical support staff.</p>
+            
+            <p><strong>Youth Leadership Program</strong> Applications are now open for the 2026 Youth Leadership Program. This 8-week intensive workshop helps young adults develop crucial skills in event planning.</p>
+        </div>
+        
+        <p style="margin-top: 10px; text-align: center; font-size: 14px;"><strong>CSS Properties:</strong> <code>column-count: 2;</code> <code>column-gap: 40px;</code> <code>column-rule: 3px solid #e63946;</code></p>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section id="registration">
+
+        <h2>Event Registration</h2>
+
+        <!-- Task 9: Loading Spinner -->
+        <div id="loading-spinner" style="display: none; text-align: center; margin: 20px 0;">
+            <div style="display: inline-block; padding: 10px 20px; background: #667eea; color: white; border-radius: 25px; animation: pulse 1s infinite;">
+                Loading Events...
+            </div>
+        </div>
+
+        <style>
+            @keyframes pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.6; }
+            }
+        </style>
+
+        <!-- Task 12: Message Display Area -->
+        <div id="feedbackMessage" style="display: none; margin: 15px 0; padding: 10px; border-radius: 5px;"></div>
+
+        <!-- Task 11: Registration Form -->
+        <form id="registrationForm">
+
+            <fieldset>
+                <legend>Participant Information</legend>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required autofocus>
+                <span id="nameError" style="color: red; display: block; font-size: 12px;"></span>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <span id="emailError" style="color: red; display: block; font-size: 12px;"></span>
+
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter 10 digit number" onblur="validatePhone()">
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Event Details</legend>
+
+                <label for="eventDate">Date:</label>
+                <input type="date" id="eventDate" name="eventDate" required>
+
+                <label for="eventType">Event Type:</label>
+                <select id="eventType" name="eventType" onchange="displayFee()">
+                    <option value="">Select Event</option>
+                    <option value="Music">Music - ₹100</option>
+                    <option value="Sports">Sports - ₹200</option>
+                    <option value="Art">Art - ₹150</option>
+                    <option value="Food">Food - ₹120</option>
+                    <option value="Technology">Technology - ₹180</option>
+                </select>
+                
+                <span id="eventError" style="color: red; display: block; font-size: 12px;"></span>
+                <p id="feeDisplay" style="font-weight: bold; color: #d63031;"></p>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Message & Feedback</legend>
+
+                <label for="userMessage">Your Message:</label>
+                <textarea id="userMessage" name="userMessage" placeholder="Enter your message or feedback" onkeyup="countCharacters()"></textarea>
+
+                <p>Character Count: <span id="charCount">0</span></p>
+
+            </fieldset>
+
+            <button type="submit" id="registerBtn">
+                Register for Event
+            </button>
+
+            <br><br>
+
+            <output id="outputMessage" aria-live="polite" style="display: block; padding: 10px; background: #f8f9fa; border-radius: 5px; min-height: 50px;"></output>
+
+        </form>
+
+    </section>
+
+    <!-- Video Section -->
+    <section id="video-promo">
+
+        <h2>Event Promo Video</h2>
+
+        <video width="500" controls oncanplay="videoReady()" poster="images/video-poster.jpg">
+            <source src="videos/sample.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <p id="videoMessage"></p>
+
+    </section>
+
+    <!-- Geolocation Section -->
+    <section id="geolocation">
+
+        <h2>Find Nearby Events</h2>
+
+        <button onclick="findLocation()">
+            Find Nearby Events
+        </button>
+
+        <p id="location" style="margin-top: 15px; padding: 10px; background: #f0f0f0; border-radius: 5px;"></p>
+
+    </section>
+
+    <!-- jQuery Demo Section for Task 14 -->
+    <section class="demo-section" id="jquery-demo-section">
+        <h3>Task 14: jQuery Effects Demo</h3>
+        <div style="background: rgba(214, 48, 49, 0.1); padding: 15px; border-radius: 8px;">
+            <p><strong>jQuery Effects Controls:</strong></p>
+            <button id="fadeOutBtn" style="margin: 5px; padding: 8px 16px;">Fade Out Cards</button>
+            <button id="fadeInBtn" style="margin: 5px; padding: 8px 16px;">Fade In Cards</button>
+            <button id="fadeToggleBtn" style="margin: 5px; padding: 8px 16px;">Fade Toggle</button>
+            <p style="font-size: 12px; margin-top: 10px;">Using jQuery <code>.fadeIn()</code>, <code>.fadeOut()</code>, and <code>.fadeToggle()</code> methods</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>Email: community@gmail.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>Address: Community Center, Main Street, City</p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <hr>
+        <div>
+            <p>&copy; 2026 Community Event Portal. All rights reserved.</p>
+            <button onclick="clearPreferences()">
+                 Clear Preferences
+            </button>
+        </div>
+    </footer>
+
+    <!-- Scripts - ORDER MATTERS! -->
+    <!-- First: Main JavaScript with all core functionality -->
+    <script src="main.js"></script>
+    <!-- Second: Helper functions -->
+    <script src="script.js"></script>
+    
+    <!-- Additional initialization for jQuery buttons after DOM loads -->
+    <script>
+        // Wait for DOM and all scripts to load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log(" DOM fully loaded and parsed");
+            
+            // Setup jQuery handlers if jQuery is available
+            if (typeof $ !== 'undefined') {
+                // Task 14: jQuery click handlers
+                $('#fadeOutBtn').on('click', function() {
+                    $('.event-card').fadeOut(400);
+                    console.log("jQuery: Fading out event cards");
+                });
+                
+                $('#fadeInBtn').on('click', function() {
+                    $('.event-card').fadeIn(400);
+                    console.log("jQuery: Fading in event cards");
+                });
+                
+                $('#fadeToggleBtn').on('click', function() {
+                    $('.event-card').fadeToggle(300);
+                    console.log("jQuery: Toggling event cards fade");
+                });
+                
+                // Style the register button with jQuery
+                $('#registerBtn').css({
+                    'background': 'linear-gradient(135deg, #667eea, #764ba2)',
+                    'color': 'white',
+                    'border': 'none',
+                    'padding': '12px 30px',
+                    'borderRadius': '25px',
+                    'cursor': 'pointer',
+                    'fontSize': '16px',
+                    'fontWeight': 'bold'
+                }).hover(
+                    function() { $(this).css('transform', 'scale(1.05)'); },
+                    function() { $(this).css('transform', 'scale(1)'); }
+                );
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1034 @@
+/* ========================================== */
+/* LOCAL COMMUNITY EVENT PORTAL - STYLESHEET */
+/* ========================================== */
+/* This external stylesheet demonstrates CSS3 */
+/* best practices and all 10 CSS tasks         */
+/* ========================================== */
+
+
+/* ========================================== */
+/* TASK 3: UNIVERSAL SELECTOR - RESET */
+/* ========================================== */
+
+/* Task 3: Universal selector to reset margin/padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================================== */
+/* TASK 1, 2, 5: GENERAL BODY & PAGE STYLES */
+/* ========================================== */
+
+/* Task 1 & 5: External CSS and Typography Styling */
+/* Task 2: Well-formatted CSS with proper comments */
+/* Task 4: Background image with fallback color */
+body {
+    font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    background-color: #fffbfb;
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(230, 57, 70, 0.05) 35px, rgba(230, 57, 70, 0.05) 70px),
+        linear-gradient(180deg, #ffffff 0%, #fef5f5 50%, #fff9f9 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* Task 5: Google Fonts are imported in index.html */
+h1, h2, h3 {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 1.3;
+    color: #d63031;
+}
+
+h1 {
+    font-size: 42px;
+}
+
+h2 {
+    font-size: 32px;
+    color: #c92a2a;
+}
+
+h3 {
+    font-size: 24px;
+    color: #e63946;
+}
+
+/* Task 3: Grouping selector for h3, p to style together */
+h3, p {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin-bottom: 15px;
+}
+
+
+/* ========================================== */
+/* TASK 3: ELEMENT SELECTOR & TASK 6: LINKS */
+/* ========================================== */
+
+/* Task 3: Element selector to style all <a> links */
+/* Task 6: Link styling with pseudo-classes */
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Task 6: Unvisited links */
+a:link {
+    color: #d63031;
+}
+
+/* Task 6: Visited links */
+a:visited {
+    color: #a4161a;
+}
+
+/* Task 6: Hover state */
+a:hover {
+    color: #fff;
+    background-color: #d63031;
+    text-decoration: none;
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+/* Task 6: Active state (being clicked) */
+a:active {
+    color: #fff;
+    background-color: #a4161a;
+}
+
+
+/* ========================================== */
+/* TASK 3: ID SELECTOR - NAVIGATION */
+/* ========================================== */
+
+/* Task 2: Style for navigation bar with comments */
+nav {
+    background: linear-gradient(to right, #d63031, #e63946);
+    padding: 18px 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 4px 12px rgba(214, 48, 49, 0.25);
+    border-bottom: 4px solid #ff5252;
+}
+
+/* Task 6: Navigation links styling */
+nav a {
+    color: white;
+    font-size: 17px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+    color: #fff;
+    transform: translateY(-2px);
+    padding: 10px 18px;
+}
+
+nav a:link {
+    color: white;
+}
+
+
+/* ========================================== */
+/* TASK 3: ID SELECTOR & TASK 4: GRADIENTS */
+/* ========================================== */
+
+/* Task 3: ID selector #mainHeader */
+/* Task 4: Background gradient styling */
+#welcomeBanner {
+    background: linear-gradient(135deg, #d63031 0%, #e63946 50%, #ff5252 100%);
+    color: white;
+    padding: 50px 40px;
+    margin: 0 20px 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(214, 48, 49, 0.35);
+    text-align: center;
+    border-left: 6px solid #a4161a;
+}
+
+#welcomeBanner h1 {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 48px;
+}
+
+#welcomeBanner p {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+
+/* ========================================== */
+/* TASK 4: COLOR & BACKGROUND STYLING */
+/* ========================================== */
+
+/* Task 4: Text and background colors using HEX and RGBA */
+.highlight {
+    background-color: #ff5252;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(255, 82, 82, 0.3);
+}
+
+/* Task 4: RGBA color with transparency */
+.event-section {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 35px;
+    margin: 25px 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(214, 48, 49, 0.1);
+    border-top: 5px solid #e63946;
+}
+
+
+/* ========================================== */
+/* TASK 3: CLASS SELECTOR - EVENT CARDS */
+/* ========================================== */
+
+/* Task 3: Class selector .eventCard for styling */
+/* Task 8: Box Model - margin, padding, border */
+.eventCard {
+    border: 3px solid #e63946;
+    padding: 25px;
+    margin: 20px;
+    background: linear-gradient(135deg, #fffbfb 0%, #fff5f7 100%);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(214, 48, 49, 0.12);
+    transition: all 0.3s ease;
+    border-left: 6px solid #d63031;
+}
+
+.eventCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(214, 48, 49, 0.2);
+    border-left: 6px solid #a4161a;
+}
+
+
+/* ========================================== */
+/* TASK 7: TABLE STYLING */
+/* ========================================== */
+
+/* Task 2: Comment for table styling section */
+/* Task 7: Table with borders, padding, and formatting */
+table {
+    width: 95%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 8px 20px rgba(214, 48, 49, 0.12);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #e63946;
+}
+
+/* Task 7: Style table headers */
+th {
+    background: linear-gradient(to right, #d63031, #e63946);
+    color: white;
+    padding: 18px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+}
+
+/* Task 7: Style table data cells */
+td {
+    padding: 16px 18px;
+    text-align: center;
+    border-bottom: 1px solid #ecf0f1;
+    color: #333;
+}
+
+/* Task 7: Zebra striping - alternate row colors */
+tr:nth-child(even) {
+    background-color: #fef5f5;
+}
+
+tr:nth-child(odd) {
+    background-color: #fffbfb;
+}
+
+/* Task 7: Hover effect on rows */
+tr:hover {
+    background-color: #ffcccc;
+    transition: background-color 0.3s ease;
+}
+
+/* Task 7: Border styling for table */
+table, th, td {
+    border: 1px solid #e63946;
+}
+
+
+/* ========================================== */
+/* TASK 8: BOX MODEL & IMAGES */
+/* ========================================== */
+
+/* Task 2: Comment for images styling */
+/* Task 8: Box Model with border, padding, margin */
+.event-img {
+    width: 200px;
+    height: 150px;
+    border: 5px solid #e63946;
+    border-radius: 12px;
+    padding: 4px;
+    margin: 15px auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(214, 48, 49, 0.25);
+    background-color: white;
+}
+
+.event-img:hover {
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 10px 25px rgba(214, 48, 49, 0.4);
+    border-color: #a4161a;
+}
+
+
+/* ========================================== */
+/* TASK 1: FORM STYLING & TASK 8: OUTLINES */
+/* ========================================== */
+
+/* Task 2: Comment for form section */
+/* Task 1: External CSS styling */
+#registration {
+    background: linear-gradient(135deg, rgba(214, 48, 49, 0.08), rgba(230, 57, 70, 0.08));
+    padding: 40px 20px;
+    margin: 40px 0;
+    border-radius: 12px;
+    border-top: 5px solid #e63946;
+}
+
+form {
+    background-color: white;
+    max-width: 650px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(214, 48, 49, 0.12);
+    margin: 25px auto;
+    border: 2px solid #e63946;
+}
+
+/* Task 5: Typography for form */
+fieldset {
+    border: 3px solid #e63946;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #fffbfb, #fff5f7);
+}
+
+legend {
+    background: linear-gradient(to right, #d63031, #e63946);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    font-size: 15px;
+}
+
+/* Task 5: Input field typography and styling */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* Task 8: Focus outline on form fields */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #d63031;
+    outline: 4px solid rgba(214, 48, 49, 0.25);
+    box-shadow: 0 0 12px rgba(214, 48, 49, 0.15);
+    background-color: #fffbfb;
+}
+
+/* Task 8: Visibility demo - hidden input (not displayed) */
+input.hidden-demo {
+    visibility: hidden;
+    display: none;
+}
+
+/* Task 8: Visibility hidden (takes space but not visible) */
+input.visibility-hidden-demo {
+    visibility: hidden;
+}
+
+button {
+    padding: 14px 36px;
+    background: linear-gradient(to right, #d63031, #e63946);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(214, 48, 49, 0.25);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(214, 48, 49, 0.35);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+
+/* ========================================== */
+/* TASK 5: TYPOGRAPHY STYLING */
+/* ========================================== */
+
+/* Task 5: Text styling with text-align, text-transform, letter-spacing */
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 40px 0 25px;
+    color: #c92a2a;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #d63031, #e63946);
+    border-radius: 2px;
+}
+
+/* Task 5: Description text styling */
+p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #444;
+    margin: 15px 0;
+}
+
+/* Task 5: Special text styling */
+.description {
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 0.4px;
+    line-height: 1.9;
+    color: #555;
+}
+
+
+/* ========================================== */
+/* TASK 6: LIST STYLING */
+/* ========================================== */
+
+/* Task 6: List styling */
+ul, ol {
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 12px;
+    padding: 6px 0;
+    color: #333;
+}
+
+/* Task 6: Customize list style and remove bullets from nav */
+.event-list {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 20px;
+}
+
+.event-list li {
+    padding-left: 10px;
+    margin-bottom: 12px;
+    color: #444;
+}
+
+.event-list li::marker {
+    color: #e63946;
+    font-weight: bold;
+}
+
+/* Task 6: Nav list without bullets */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+}
+
+
+/* ========================================== */
+/* TASK 9: MULTIPLE COLUMNS IN TEXT */
+/* ========================================== */
+
+/* Task 9: Newspaper-style multi-column layout */
+.newsletter, .bulletin {
+    column-count: 2;
+    column-gap: 35px;
+    column-rule: 3px solid #e63946;
+    padding: 30px;
+    background: linear-gradient(135deg, #fffbfb, #fff5f7);
+    border-radius: 10px;
+    margin: 30px 0;
+    text-align: justify;
+    border: 2px solid #e63946;
+    color: #444;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .newsletter, .bulletin {
+        column-count: 1;
+    }
+}
+
+
+/* ========================================== */
+/* TASK 4: VIDEO & OTHER SECTIONS */
+/* ========================================== */
+
+/* Task 4: Video section with gradient */
+#video-promo {
+    background: linear-gradient(135deg, rgba(214, 48, 49, 0.08), rgba(230, 57, 70, 0.08));
+    padding: 40px;
+    border-radius: 12px;
+    margin: 40px 20px;
+    border: 3px solid #e63946;
+}
+
+#video-promo video {
+    width: 100%;
+    max-width: 700px;
+    margin-top: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(214, 48, 49, 0.2);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 4px solid #e63946;
+}
+
+#videoMessage {
+    color: #c92a2a;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Task 4: Output message with colors */
+#outputMessage {
+    display: block;
+    margin-top: 20px;
+    padding: 18px;
+    background-color: rgba(52, 152, 219, 0.12);
+    border: 3px solid #3498db;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #2c3e50;
+    min-height: 40px;
+    border-left: 6px solid #3498db;
+}
+
+/* Task 4: Geolocation results with background */
+#location {
+    margin-top: 20px;
+    padding: 18px;
+    background-color: rgba(46, 204, 113, 0.12);
+    border: 3px solid #27ae60;
+    border-radius: 8px;
+    color: #27ae60;
+    font-weight: 600;
+    border-left: 6px solid #27ae60;
+}
+
+/* Task 4: Footer with gradient background */
+footer {
+    background: linear-gradient(to right, #333, #444);
+    color: white;
+    padding: 40px 30px;
+    margin-top: 60px;
+    text-align: center;
+    border-radius: 0;
+    border-top: 6px solid #e63946;
+}
+
+footer hr {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+}
+
+footer p {
+    margin: 12px 0;
+    color: #ecf0f1;
+}
+
+
+/* ========================================== */
+/* TASK 10: RESPONSIVE WEB DESIGN */
+/* ========================================== */
+
+/* Task 10: Base responsive styles with Flexbox */
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Task 10: Flexible layout for events */
+.events-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-between;
+}
+
+.event-item {
+    flex: 1 1 calc(33.333% - 25px);
+    min-width: 260px;
+}
+
+/* Task 10: Media Query for tablets (480px - 768px) */
+@media (max-width: 768px) {
+    body {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    /* Task 10: Stack navigation vertically */
+    nav {
+        flex-direction: column;
+        padding: 15px;
+        gap: 8px;
+    }
+
+    nav a {
+        margin-right: 0;
+        margin-bottom: 8px;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 12px 16px;
+    }
+
+    /* Task 10: Reduce image sizes */
+    .event-img {
+        width: 100%;
+        height: auto;
+        max-width: 200px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 12px;
+    }
+
+    /* Task 10: Full width form */
+    form {
+        width: 100%;
+        max-width: 100%;
+        padding: 25px;
+    }
+
+    #welcomeBanner {
+        padding: 30px 20px;
+        margin: 0 10px 25px 10px;
+    }
+
+    /* Task 10: Use vh for flexible heights */
+    #video-promo video {
+        height: auto;
+    }
+
+    /* Task 10: 2-column layout for events */
+    .event-item {
+        flex: 1 1 calc(50% - 25px);
+    }
+
+    /* Task 10: Single column for newsletter */
+    .newsletter, .bulletin {
+        column-count: 1;
+        padding: 20px;
+    }
+
+    .event-section {
+        padding: 20px;
+        margin: 15px 10px;
+    }
+}
+
+/* Task 10: Media Query for mobile (<480px) */
+@media (max-width: 480px) {
+    body {
+        margin: 0;
+        font-size: 13px;
+        background: linear-gradient(180deg, #ffffff 0%, #fef5f5 100%);
+    }
+
+    h1 {
+        font-size: 24px;
+        letter-spacing: 0;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h2::after {
+        width: 60px;
+    }
+
+    #welcomeBanner {
+        padding: 25px 15px;
+        margin: 0 5px 20px 5px;
+        text-align: center;
+    }
+
+    #welcomeBanner h1 {
+        font-size: 28px;
+    }
+
+    /* Task 10: Navigation on mobile */
+    nav {
+        padding: 10px;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    nav a {
+        font-size: 15px;
+        padding: 10px 12px;
+    }
+
+    /* Task 10: Full width images and forms */
+    .event-img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    form {
+        padding: 20px;
+        margin: 15px 0;
+    }
+
+    input, select, textarea {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* Task 10: Stack event items */
+    .event-item {
+        flex: 1 1 100%;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    table {
+        font-size: 12px;
+        margin: 20px 5px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .newsletter, .bulletin {
+        column-count: 1;
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    .event-section {
+        padding: 15px;
+        margin: 10px 5px;
+    }
+
+    #registration {
+        padding: 20px 10px;
+        margin: 20px 0;
+    }
+
+    #video-promo {
+        padding: 20px 10px;
+        margin: 20px 5px;
+    }
+}
+
+/* Task 10: Large screen optimization (1200px+) */
+@media (min-width: 1200px) {
+    body {
+        margin: 0;
+    }
+
+    section {
+        padding: 25px;
+    }
+
+    .event-item {
+        flex: 1 1 calc(33.333% - 25px);
+    }
+
+    form {
+        max-width: 750px;
+    }
+}
+
+/* Task 10: Using percentage for flexible layouts */
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Task 10: VW and VH units for responsive sizing */
+.full-width {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+/* ========================================== */
+/* ADDITIONAL STYLES FOR JAVASCRIPT TASKS */
+/* ========================================== */
+
+/* Task 7: Dynamic event cards container */
+#events-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+    padding: 20px;
+}
+
+/* Task 7: Event card styling for dynamic content */
+.event-card {
+    background: linear-gradient(135deg, #fffbfb, #fff5f7);
+    border: 3px solid #e63946;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(214, 48, 49, 0.12);
+    transition: all 0.3s ease;
+    border-left: 6px solid #d63031;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(214, 48, 49, 0.25);
+    border-left: 6px solid #a4161a;
+}
+
+.event-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #d63031;
+}
+
+.event-card p {
+    margin: 10px 0;
+    color: #555;
+    font-size: 15px;
+}
+
+.event-card button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    background: linear-gradient(to right, #d63031, #e63946);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.event-card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(214, 48, 49, 0.3);
+}
+
+/* Task 8: Filter section styling */
+#filter-section, #search-section {
+    background: rgba(214, 48, 49, 0.08);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 6px solid #e63946;
+}
+
+#filter-section label, #search-section label {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+#categoryFilter, #eventSearch {
+    padding: 10px 15px;
+    border: 2px solid #e63946;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+#categoryFilter:focus, #eventSearch:focus {
+    border-color: #d63031;
+    outline: none;
+    box-shadow: 0 0 8px rgba(214, 48, 49, 0.2);
+}
+
+/* Task 12: Message display styling */
+#message {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+    font-weight: 600;
+    display: none;
+}
+
+#message.success {
+    background-color: rgba(46, 204, 113, 0.12);
+    border: 3px solid #27ae60;
+    color: #27ae60;
+    border-left: 6px solid #27ae60;
+}
+
+#message.error {
+    background-color: rgba(231, 76, 60, 0.12);
+    border: 3px solid #e74c3c;
+    color: #e74c3c;
+    border-left: 6px solid #e74c3c;
+}
+
+/* Task 9: Loading spinner styling */
+#loading-spinner {
+    text-align: center;
+    padding: 30px;
+    color: #d63031;
+    font-weight: bold;
+    font-size: 18px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Task 11: Error message styling */
+#nameError, #emailError, #eventError {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+#nameError.show, #emailError.show, #eventError.show {
+    display: block;
+}
+
+/* Responsive adjustments for JavaScript elements */
+@media (max-width: 768px) {
+    #events-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .event-card {
+        padding: 20px;
+    }
+
+    #filter-section, #search-section {
+        padding: 15px;
+    }
+
+    #categoryFilter, #eventSearch {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #filter-section label, #search-section label {
+        display: block;
+        margin-bottom: 8px;
+    }
+}
+
+/* END OF STYLESHEET */
+

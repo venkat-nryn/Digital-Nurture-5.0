@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Learning Portal - Help & Tasks Reference</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .task-item {
+            background: linear-gradient(135deg, #fffbfb, #fff5f7);
+            border: 2px solid #e63946;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 6px solid #d63031;
+        }
+        .task-item h3 {
+            margin-top: 0;
+            color: #d63031;
+        }
+        .task-item code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d63031;
+        }
+        .task-item ul {
+            margin-left: 20px;
+        }
+        .task-item li {
+            margin: 8px 0;
+        }
+        .console-example {
+            background-color: #1e1e1e;
+            color: #00ff00;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+            border-left: 4px solid #00ff00;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Back to Portal</a>
+        <a href="#tasks">Tasks</a>
+        <a href="#testing">Testing Tips</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+
+        <h1>JavaScript Training Portal - Complete Guide</h1>
+
+        <p style="font-size: 16px; line-height: 1.8;">
+            This portal demonstrates all 14 JavaScript tasks in a real-world "Local Community Event Portal" application.
+            Each task builds upon web development fundamentals and modern JavaScript practices.
+        </p>
+
+        <section id="tasks">
+            <h2>14 JavaScript Tasks Overview</h2>
+
+            <!-- Task 1 -->
+            <div class="task-item">
+                <h3>Task 1: JavaScript Basics & Setup</h3>
+                <p><strong>Focus:</strong> console.log, alert, script initialization</p>
+                <ul>
+                    <li>Console logging: <code>console.log("Welcome to the Community Portal")</code></li>
+                    <li>Alert on page load: <code>alert("Community Portal Loaded Successfully!")</code></li>
+                    <li>DOMContentLoaded event for initialization</li>
+                </ul>
+                <p><strong>How to Test:</strong> Open browser DevTools (F12) → Console tab. You'll see the welcome message.</p>
+            </div>
+
+            <!-- Task 2 -->
+            <div class="task-item">
+                <h3>Task 2: Data Types & Operators</h3>
+                <p><strong>Focus:</strong> const, let, template literals, operators</p>
+                <ul>
+                    <li>Const for immutable values: <code>const eventName = "Music Festival 2026";</code></li>
+                    <li>Let for mutable values: <code>let availableSeats = 50;</code></li>
+                    <li>Template literals: <code>`Event: ${eventName}, Seats: ${availableSeats}`</code></li>
+                    <li>Operators: <code>availableSeats++</code>, <code>availableSeats--</code></li>
+                </ul>
+                <p><strong>How to Test:</strong> In console, type <code>CommunityPortal.getEventInfo()</code></p>
+            </div>
+
+            <!-- Task 3 -->
+            <div class="task-item">
+                <h3>Task 3: Conditionals, Loops & Error Handling</h3>
+                <p><strong>Focus:</strong> if-else, forEach, try-catch</p>
+                <ul>
+                    <li>If-else conditions: <code>if (!event.passed && event.seats > 0)</code></li>
+                    <li>forEach loops: <code>events.forEach(event => { ... })</code></li>
+                    <li>Try-catch blocks for error handling</li>
+                </ul>
+                <p><strong>How to Test:</strong> In console, type <code>CommunityPortal.displayValidEvents()</code></p>
+            </div>
+
+            <!-- Task 4 -->
+            <div class="task-item">
+                <h3>Task 4: Functions, Scope & Closures</h3>
+                <p><strong>Focus:</strong> Function declarations, parameters, closures</p>
+                <ul>
+                    <li>Function parameters and returns: <code>function addEvent(name, date, seats) { ... }</code></li>
+                    <li>Closure example: Category tracker stores state internally</li>
+                    <li>Callbacks: <code>filterEventsByCategory(category, callback)</code></li>
+                </ul>
+                <p><strong>How to Test:</strong> In console, type <code>CommunityPortal.addEvent("Workshop", "2026-10-15", 25)</code></p>
+            </div>
+
+            <!-- Task 5 -->
+            <div class="task-item">
+                <h3>Task 5: Objects & Prototypes</h3>
+                <p><strong>Focus:</strong> Constructor functions, prototype methods, Object.entries()</p>
+                <ul>
+                    <li>Constructor: <code>function Event(id, name, date, seats) { this.name = name; ... }</code></li>
+                    <li>Prototype methods: <code>Event.prototype.checkAvailability = function() { ... }</code></li>
+                    <li>Object.entries(): <code>Object.entries(event).forEach(([key, value]) => ...)</code></li>
+                </ul>
+                <p><strong>How to Test:</strong> In console, type <code>CommunityPortal.getEventDetails(CommunityPortal.eventList[0])</code></p>
+            </div>
+
+            <!-- Task 6 -->
+            <div class="task-item">
+                <h3>Task 6: Arrays & Methods</h3>
+                <p><strong>Focus:</strong> .push(), .filter(), .map()</p>
+                <ul>
+                    <li>.push() to add: <code>eventList.push(newEvent)</code></li>
+                    <li>.filter() to select: <code>eventList.filter(event => event.category === "Music")</code></li>
+                    <li>.map() to transform: <code>eventList.map(event => ({ title: event.name }))</code></li>
+                </ul>
+                <p><strong>How to Test:</strong> In console, type <code>CommunityPortal.getMusicEvents()</code></p>
+            </div>
+
+            <!-- Task 7 -->
+            <div class="task-item">
+                <h3>Task 7: DOM Manipulation</h3>
+                <p><strong>Focus:</strong> querySelector, createElement, appendChild</p>
+                <ul>
+                    <li>querySelector: <code>document.querySelector("#events-container")</code></li>
+                    <li>createElement: <code>document.createElement("div")</code></li>
+                    <li>appendChild: <code>container.appendChild(card)</code></li>
+                </ul>
+                <p><strong>How to Test:</strong> Scroll to the "Events" section - you'll see dynamically generated event cards.</p>
+            </div>
+
+            <!-- Task 8 -->
+            <div class="task-item">
+                <h3>Task 8: Event Handling</h3>
+                <p><strong>Focus:</strong> addEventListener, onclick, onchange</p>
+                <ul>
+                    <li>Click events: <code>registerBtn.addEventListener("click", handler)</code></li>
+                    <li>Change events: <code>categoryFilter.addEventListener("change", handler)</code></li>
+                    <li>Keyboard events: <code>keydown</code> for search</li>
+                </ul>
+                <p><strong>How to Test:</strong> Try the filter dropdown and search box in the Events section.</p>
+            </div>
+
+            <!-- Task 9 -->
+            <div class="task-item">
+                <h3>Task 9: Async JavaScript, Promises & Async/Await</h3>
+                <p><strong>Focus:</strong> fetch API, Promises, async/await</p>
+                <ul>
+                    <li>Fetch: <code>fetch(url).then(response => response.json())</code></li>
+                    <li>.catch() error handling: <code>.catch(error => console.error(error))</code></li>
+                    <li>Async/await: <code>async function loadEvents() { const data = await fetch(...) }</code></li>
+                </ul>
+                <p><strong>How to Test:</strong> In console, type <code>CommunityPortal.loadEventsWithAsync()</code></p>
+            </div>
+
+            <!-- Task 10 -->
+            <div class="task-item">
+                <h3>Task 10: Modern JavaScript Features</h3>
+                <p><strong>Focus:</strong> Destructuring, spread operator, default parameters</p>
+                <ul>
+                    <li>Default parameters: <code>function createEvent(name = "Untitled", date = "2026-12-31") { ... }</code></li>
+                    <li>Destructuring: <code>const { name, date, seats } = event;</code></li>
+                    <li>Spread operator: <code>const copy = [...eventList]</code></li>
+                    <li>Arrow functions: <code>const getCount = () => eventList.length;</code></li>
+                </ul>
+                <p><strong>How to Test:</strong> In console, type <code>CommunityPortal.getEventCount()</code></p>
+            </div>
+
+            <!-- Task 11 -->
+            <div class="task-item">
+                <h3>Task 11: Working with Forms</h3>
+                <p><strong>Focus:</strong> form.elements, preventDefault(), validation</p>
+                <ul>
+                    <li>Capture inputs: <code>const name = form.elements["name"].value;</code></li>
+                    <li>Prevent default: <code>event.preventDefault()</code></li>
+                    <li>Validation: Check if inputs are valid before submission</li>
+                    <li>Error display: Show inline error messages</li>
+                </ul>
+                <p><strong>How to Test:</strong> Try submitting the registration form with empty fields.</p>
+            </div>
+
+            <!-- Task 12 -->
+            <div class="task-item">
+                <h3>Task 12: AJAX & Fetch API</h3>
+                <p><strong>Focus:</strong> fetch POST, setTimeout, server simulation</p>
+                <ul>
+                    <li>POST request: <code>fetch(url, { method: "POST", body: JSON.stringify(data) })</code></li>
+                    <li>Async delay: <code>setTimeout(() => { ... }, 2000)</code></li>
+                    <li>Success/failure messages displayed to user</li>
+                </ul>
+                <p><strong>How to Test:</strong> In console, type <code>CommunityPortal.simulateServerDelay()</code></p>
+            </div>
+
+            <!-- Task 13 -->
+            <div class="task-item">
+                <h3>Task 13: Debugging & Testing</h3>
+                <p><strong>Focus:</strong> console methods, breakpoints, DevTools</p>
+                <ul>
+                    <li>console.log() for basic logging</li>
+                    <li>console.group() for organized output</li>
+                    <li>Step-by-step debugging functions</li>
+                </ul>
+                <p><strong>How to Test:</strong> In console, type <code>CommunityPortal.debugEventFiltering()</code></p>
+            </div>
+
+            <!-- Task 14 -->
+            <div class="task-item">
+                <h3>Task 14: jQuery & Frameworks</h3>
+                <p><strong>Focus:</strong> jQuery syntax, framework benefits</p>
+                <ul>
+                    <li>jQuery click: <code>$('#registerBtn').click(function() { ... })</code></li>
+                    <li>jQuery effects: <code>$('.event-card').fadeIn()</code>, <code>.fadeOut()</code></li>
+                    <li>Framework benefits: Reusability, state management, performance</li>
+                </ul>
+                <p><strong>How to Test:</strong> jQuery library is loaded; check console for setup confirmation.</p>
+            </div>
+        </section>
+
+        <!-- Testing Tips -->
+        <section id="testing" style="margin-top: 40px;">
+            <h2>How to Test & Debug</h2>
+
+            <div class="task-item">
+                <h3>Browser DevTools (F12)</h3>
+                <p><strong>Console Tab:</strong></p>
+                <div class="console-example">
+&gt; console.log("Testing")
+&gt; CommunityPortal.eventList
+&gt; CommunityPortal.displayValidEvents()
+                </div>
+                <p><strong>Network Tab:</strong> View API requests (if any)</p>
+                <p><strong>Sources Tab:</strong> Set breakpoints and step through code</p>
+            </div>
+
+            <div class="task-item">
+                <h3>Common Console Commands</h3>
+                <ul>
+                    <li><code>CommunityPortal</code> - Access all functions and data</li>
+                    <li><code>CommunityPortal.eventList</code> - View all events</li>
+                    <li><code>CommunityPortal.displayValidEvents()</code> - Run Task 3</li>
+                    <li><code>CommunityPortal.getMusicEvents()</code> - Run Task 6</li>
+                    <li><code>debugEventFiltering()</code> - Run Task 13</li>
+                </ul>
+            </div>
+
+            <div class="task-item">
+                <h3>Testing the Form</h3>
+                <ol>
+                    <li>Fill in Name, Email, Event Type</li>
+                    <li>Try submitting with empty fields - see validation errors</li>
+                    <li>Try entering invalid email - see validation</li>
+                    <li>Try entering phone with < 10 digits</li>
+                </ol>
+            </div>
+
+            <div class="task-item">
+                <h3>Testing Dynamic Content</h3>
+                <ol>
+                    <li>Scroll to "Events" section to see dynamic event cards</li>
+                    <li>Use the category filter to filter events</li>
+                    <li>Use the search box to search for events</li>
+                    <li>Click "Register" on any event card</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Key Concepts -->
+        <section style="margin-top: 40px;">
+            <h2>Key JavaScript Concepts</h2>
+
+            <div class="task-item">
+                <h3>Scope & Closures</h3>
+                <p>JavaScript has function scope. Variables declared inside a function are only accessible within that function.</p>
+                <p>A closure is when a function has access to variables from another function's scope.</p>
+            </div>
+
+            <div class="task-item">
+                <h3>Asynchronous Programming</h3>
+                <p>JavaScript is single-threaded but uses callbacks, Promises, and async/await to handle async operations.</p>
+                <p>Common use cases: Fetching data, file operations, timers.</p>
+            </div>
+
+            <div class="task-item">
+                <h3>DOM vs JavaScript</h3>
+                <p><strong>DOM (Document Object Model):</strong> The structure of the HTML page.</p>
+                <p><strong>JavaScript:</strong> Can read and modify the DOM dynamically.</p>
+            </div>
+
+            <div class="task-item">
+                <h3>Event-Driven Programming</h3>
+                <p>Web applications respond to user events (click, submit, type, etc.).</p>
+                <p>Event handlers are functions that execute when an event occurs.</p>
+            </div>
+        </section>
+
+        <!-- Contact & Resources -->
+        <section style="margin-top: 40px; margin-bottom: 40px;">
+            <h2>Need Help?</h2>
+            <p>Email: community@gmail.com</p>
+            <p>For more information, visit the main portal page and explore the features.</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Community Event Portal. All rights reserved.</p>
+        <p>JavaScript Learning Module - All 14 Tasks Implemented</p>
+    </footer>
+
+</body>
+
+</html>
