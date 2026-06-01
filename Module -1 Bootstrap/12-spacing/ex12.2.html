@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 12.2 - Pricing Section with Spacing Utilities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        .pricing-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 80px 0;
+        }
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+            height: 100%;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .pricing-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .pricing-header.popular {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .price small {
+            font-size: 1rem;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .feature-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: #ffc107;
+            color: #000;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="pricing-section">
+        <div class="container">
+            <!-- Section Header with spacing -->
+            <div class="text-center mb-5 pb-3">
+                <h1 class="display-4 mb-3">Simple, Transparent Pricing</h1>
+                <p class="lead text-muted mx-auto" style="max-width: 600px;">Choose the perfect plan for your needs. All plans include a 14-day free trial.</p>
+            </div>
+
+            <!-- Pricing Cards Grid -->
+            <div class="row g-4">
+                <!-- Basic Plan -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <div class="pricing-header py-4">
+                            <h3 class="mb-2">Basic</h3>
+                            <div class="price mb-2">$19<span class="fs-6">/month</span></div>
+                            <p class="mb-0 opacity-75">Perfect for individuals</p>
+                        </div>
+                        <div class="p-4">
+                            <ul class="feature-list mb-4">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> 5 Projects</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> 10GB Storage</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Basic Support</li>
+                                <li><i class="bi bi-x-circle-fill text-danger me-2"></i> Advanced Analytics</li>
+                                <li><i class="bi bi-x-circle-fill text-danger me-2"></i> Priority Support</li>
+                            </ul>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-primary py-2">Get Started</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pro Plan (Popular) -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card position-relative">
+                        <div class="popular-badge">MOST POPULAR</div>
+                        <div class="pricing-header popular py-4">
+                            <h3 class="mb-2">Pro</h3>
+                            <div class="price mb-2">$49<span class="fs-6">/month</span></div>
+                            <p class="mb-0 opacity-75">Best for small teams</p>
+                        </div>
+                        <div class="p-4">
+                            <ul class="feature-list mb-4">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Unlimited Projects</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> 100GB Storage</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Priority Support</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Advanced Analytics</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Team Collaboration</li>
+                            </ul>
+                            <div class="d-grid">
+                                <button class="btn btn-primary py-2">Get Started</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <div class="pricing-header py-4">
+                            <h3 class="mb-2">Enterprise</h3>
+                            <div class="price mb-2">$99<span class="fs-6">/month</span></div>
+                            <p class="mb-0 opacity-75">For large organizations</p>
+                        </div>
+                        <div class="p-4">
+                            <ul class="feature-list mb-4">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Unlimited Everything</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1TB Storage</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> 24/7 Premium Support</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Custom Analytics</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i> SLA Guarantee</li>
+                            </ul>
+                            <div class="d-grid">
+                                <button class="btn btn-outline-primary py-2">Contact Sales</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Comparison Table -->
+            <div class="mt-5 pt-4">
+                <h3 class="text-center mb-4">Compare All Features</h3>
+                <div class="table-responsive">
+                    <table class="table table-bordered text-center">
+                        <thead class="table-light">
+                            <tr><th class="py-3">Feature</th><th class="py-3">Basic</th><th class="py-3 bg-primary text-white">Pro</th><th class="py-3">Enterprise</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="text-start py-2">Projects</td><td>5</td><td class="bg-light">Unlimited</td><td>Unlimited</td></tr>
+                            <tr><td class="text-start py-2">Storage</td><td>10GB</td><td class="bg-light">100GB</td><td>1TB</td></tr>
+                            <tr><td class="text-start py-2">Team Members</td><td>1</td><td class="bg-light">5</td><td>Unlimited</td></tr>
+                            <tr><td class="text-start py-2">Support</td><td>Basic</td><td class="bg-light">Priority</td><td>24/7 Premium</td></tr>
+                            <tr><td class="text-start py-2">Analytics</td><td>Basic</td><td class="bg-light">Advanced</td><td>Custom</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- FAQ Section with spacing -->
+            <div class="mt-5 pt-4">
+                <h3 class="text-center mb-4">Frequently Asked Questions</h3>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="p-3">
+                            <h5><i class="bi bi-question-circle me-2"></i> Can I change plans later?</h5>
+                            <p class="text-muted">Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3">
+                            <h5><i class="bi bi-question-circle me-2"></i> Is there a free trial?</h5>
+                            <p class="text-muted">All plans come with a 14-day free trial. No credit card required to start.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3">
+                            <h5><i class="bi bi-question-circle me-2"></i> What payment methods do you accept?</h5>
+                            <p class="text-muted">We accept all major credit cards, PayPal, and bank transfers for enterprise plans.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3">
+                            <h5><i class="bi bi-question-circle me-2"></i> Do you offer discounts for non-profits?</h5>
+                            <p class="text-muted">Yes, we offer special pricing for non-profit organizations. Please contact our sales team.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-5 pt-4">
+                <div class="bg-white rounded-4 p-5 shadow-sm">
+                    <h2 class="mb-3">Ready to get started?</h2>
+                    <p class="text-muted mb-4">Join thousands of satisfied customers using our platform.</p>
+                    <button class="btn btn-primary btn-lg px-5 py-3">Start Free Trial</button>
+                    <button class="btn btn-outline-secondary btn-lg px-5 py-3 ms-3">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

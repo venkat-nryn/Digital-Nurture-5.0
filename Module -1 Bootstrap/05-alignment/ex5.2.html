@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5.2 - Reordering Columns with order-* classes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        .order-demo-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        .order-demo-card-1 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .order-demo-card-2 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .order-demo-card-3 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        .demo-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .order-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #ffc107;
+            color: #000;
+            border-radius: 20px;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .relative-container {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <div class="text-center mb-5">
+            <h1 class="display-4">Column Reordering</h1>
+            <p class="lead">Using <code>order-md-2</code> and <code>order-md-1</code> for responsive reordering</p>
+            <div class="alert alert-info d-inline-block">
+                <i class="bi bi-arrow-repeat"></i> Resize your browser to see the reordering effect!
+            </div>
+        </div>
+
+        <!-- Basic Reordering Example -->
+        <h2 class="mb-3">Basic Reordering (Medium screens and above)</h2>
+        <div class="demo-section">
+            <div class="row g-3">
+                <div class="col-md-4 order-md-2">
+                    <div class="order-demo-card order-demo-card-1 relative-container">
+                        <span class="order-badge">order-md-2</span>
+                        <h3>Column A</h3>
+                        <p>This column appears SECOND on tablet+ screens</p>
+                        <small>Original order: 1st</small>
+                    </div>
+                </div>
+                <div class="col-md-4 order-md-1">
+                    <div class="order-demo-card order-demo-card-2 relative-container">
+                        <span class="order-badge">order-md-1</span>
+                        <h3>Column B</h3>
+                        <p>This column appears FIRST on tablet+ screens</p>
+                        <small>Original order: 2nd</small>
+                    </div>
+                </div>
+                <div class="col-md-4 order-md-3">
+                    <div class="order-demo-card order-demo-card-3 relative-container">
+                        <span class="order-badge">order-md-3</span>
+                        <h3>Column C</h3>
+                        <p>This column stays THIRD on all screens</p>
+                        <small>Original order: 3rd</small>
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-secondary mt-3">
+                <strong>📱 Mobile view (&lt;768px):</strong> A, B, C (original order)<br>
+                <strong>💻 Tablet/Desktop (≥768px):</strong> B, A, C (reordered)
+            </div>
+        </div>
+
+        <!-- Different Reordering Scenarios -->
+        <h2 class="mb-3 mt-5">Reordering Scenarios</h2>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-header bg-primary text-white">Scenario 1: Swap First and Last</div>
+                    <div class="card-body">
+                        <div class="row g-2">
+                            <div class="col-4 order-lg-3">
+                                <div class="bg-info text-white p-3 text-center rounded">1st → Last</div>
+                            </div>
+                            <div class="col-4 order-lg-2">
+                                <div class="bg-success text-white p-3 text-center rounded">2nd → Middle</div>
+                            </div>
+                            <div class="col-4 order-lg-1">
+                                <div class="bg-warning text-white p-3 text-center rounded">3rd → First</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-header bg-success text-white">Scenario 2: Hide on Mobile</div>
+                    <div class="card-body">
+                        <div class="row g-2">
+                            <div class="col-6 order-1 order-md-0">
+                                <div class="bg-info text-white p-3 text-center rounded">Always Visible</div>
+                            </div>
+                            <div class="col-6 order-0 order-md-1">
+                                <div class="bg-warning text-white p-3 text-center rounded">Desktop Only</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Complete Order Values Demo -->
+        <h2 class="mb-3 mt-4">All Order Values (0-5)</h2>
+        <div class="demo-section">
+            <div class="row">
+                <div class="col order-5">
+                    <div class="bg-danger text-white p-3 text-center rounded">order-5</div>
+                </div>
+                <div class="col order-4">
+                    <div class="bg-warning text-white p-3 text-center rounded">order-4</div>
+                </div>
+                <div class="col order-3">
+                    <div class="bg-info text-white p-3 text-center rounded">order-3</div>
+                </div>
+                <div class="col order-2">
+                    <div class="bg-success text-white p-3 text-center rounded">order-2</div>
+                </div>
+                <div class="col order-1">
+                    <div class="bg-primary text-white p-3 text-center rounded">order-1</div>
+                </div>
+                <div class="col order-0">
+                    <div class="bg-secondary text-white p-3 text-center rounded">order-0</div>
+                </div>
+            </div>
+            <p class="text-muted mt-2 small">Note: Lower order numbers appear first. Default order is 0.</p>
+        </div>
+
+        <!-- Responsive Order Classes Table -->
+        <div class="card mt-4">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">Responsive Order Classes</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Class</th>
+                                <th>Breakpoint</th>
+                                <th>Screen Size</th>
+                                <th>Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>order-*</code></td><td>All</td><td>All screens</td><td>Apply to all breakpoints</td></tr>
+                            <tr><td><code>order-sm-*</code></td><td>≥576px</td><td>Small tablets</td><td>Tablet portrait</td></tr>
+                            <tr><td><code>order-md-*</code></td><td>≥768px</td><td>Tablets</td><td>Tablet landscape</td></tr>
+                            <tr><td><code>order-lg-*</code></td><td>≥992px</td><td>Desktops</td><td>Standard desktop</td></tr>
+                            <tr><td><code>order-xl-*</code></td><td>≥1200px</td><td>Large desktops</td><td>Wide screens</td></tr>
+                            <tr><td><code>order-xxl-*</code></td><td>≥1400px</td><td>Extra large</td><td>Ultra-wide monitors</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Reordering Demo -->
+        <div class="card mt-4">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0"><i class="bi bi-sliders2"></i> Interactive Reordering Demo</h4>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label>Column 1 Order:</label>
+                        <select class="form-select" id="order1">
+                            <option value="0">order-0</option>
+                            <option value="1">order-1</option>
+                            <option value="2" selected>order-2</option>
+                            <option value="3">order-3</option>
+                            <option value="4">order-4</option>
+                            <option value="5">order-5</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Column 2 Order:</label>
+                        <select class="form-select" id="order2">
+                            <option value="0" selected>order-0</option>
+                            <option value="1">order-1</option>
+                            <option value="2">order-2</option>
+                            <option value="3">order-3</option>
+                            <option value="4">order-4</option>
+                            <option value="5">order-5</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Column 3 Order:</label>
+                        <select class="form-select" id="order3">
+                            <option value="0">order-0</option>
+                            <option value="1" selected>order-1</option>
+                            <option value="2">order-2</option>
+                            <option value="3">order-3</option>
+                            <option value="4">order-4</option>
+                            <option value="5">order-5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row" id="interactiveRow">
+                    <div class="col-md-4">
+                        <div class="bg-danger text-white p-4 text-center rounded">Column 1</div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bg-success text-white p-4 text-center rounded">Column 2</div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bg-info text-white p-4 text-center rounded">Column 3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert-success mt-4">
+            <strong><i class="bi bi-check-circle-fill"></i> Key Takeaways:</strong>
+            <ul class="mb-0 mt-2">
+                <li>Use <code>order-*</code> classes to change visual order without changing HTML structure</li>
+                <li>Lower order numbers appear first (order-0, order-1, order-2, etc.)</li>
+                <li>Responsive order classes like <code>order-md-1</code> only apply at specific breakpoints</li>
+                <li>Perfect for mobile-first design where layout needs to adapt</li>
+                <li>Combine with other grid classes for complex responsive layouts</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const order1 = document.getElementById('order1');
+        const order2 = document.getElementById('order2');
+        const order3 = document.getElementById('order3');
+        const col1 = document.querySelector('#interactiveRow .col-md-4:nth-child(1)');
+        const col2 = document.querySelector('#interactiveRow .col-md-4:nth-child(2)');
+        const col3 = document.querySelector('#interactiveRow .col-md-4:nth-child(3)');
+
+        function updateOrders() {
+            col1.className = `col-md-4 order-${order1.value}`;
+            col2.className = `col-md-4 order-${order2.value}`;
+            col3.className = `col-md-4 order-${order3.value}`;
+        }
+
+        order1.addEventListener('change', updateOrders);
+        order2.addEventListener('change', updateOrders);
+        order3.addEventListener('change', updateOrders);
+    </script>
+</body>
+</html>

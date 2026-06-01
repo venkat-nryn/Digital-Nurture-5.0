@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 17.1 - Bootstrap Icons with Social Media Icons in Footer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .icon-showcase {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 0;
+            color: white;
+        }
+        .icon-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            height: 100%;
+        }
+        .icon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .icon-card i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .social-footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s;
+            margin: 0 8px;
+            font-size: 1.3rem;
+            color: white;
+            text-decoration: none;
+        }
+        .social-icon:hover {
+            transform: translateY(-3px);
+            background: #007bff;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section with Icons -->
+    <div class="icon-showcase">
+        <div class="container text-center">
+            <h1 class="display-4">Bootstrap Icons</h1>
+            <p class="lead">Over 1,800 beautifully crafted SVG icons</p>
+            <div class="mt-4">
+                <i class="bi bi-bootstrap-fill fs-1 mx-2"></i>
+                <i class="bi bi-github fs-1 mx-2"></i>
+                <i class="bi bi-twitter fs-1 mx-2"></i>
+                <i class="bi bi-facebook fs-1 mx-2"></i>
+                <i class="bi bi-instagram fs-1 mx-2"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <!-- Icon Categories -->
+        <h2 class="mb-4 text-center">Popular Icon Categories</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="icon-card">
+                    <i class="bi bi-envelope-fill text-primary"></i>
+                    <h5>Communication</h5>
+                    <p class="text-muted small">Envelope, chat, phone, bell</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="icon-card">
+                    <i class="bi bi-gear-fill text-secondary"></i>
+                    <h5>Settings</h5>
+                    <p class="text-muted small">Gear, tools, sliders, toggle</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="icon-card">
+                    <i class="bi bi-heart-fill text-danger"></i>
+                    <h5>Actions</h5>
+                    <p class="text-muted small">Heart, star, check, plus</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="icon-card">
+                    <i class="bi bi-calendar-fill text-success"></i>
+                    <h5>Date & Time</h5>
+                    <p class="text-muted small">Calendar, clock, hourglass</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Icon Sizes -->
+        <h2 class="mb-3 mt-5">Icon Sizes</h2>
+        <div class="row text-center g-3 mb-5">
+            <div class="col">
+                <i class="bi bi-alarm fs-6"></i>
+                <div>fs-6</div>
+            </div>
+            <div class="col">
+                <i class="bi bi-alarm fs-5"></i>
+                <div>fs-5</div>
+            </div>
+            <div class="col">
+                <i class="bi bi-alarm fs-4"></i>
+                <div>fs-4</div>
+            </div>
+            <div class="col">
+                <i class="bi bi-alarm fs-3"></i>
+                <div>fs-3</div>
+            </div>
+            <div class="col">
+                <i class="bi bi-alarm fs-2"></i>
+                <div>fs-2</div>
+            </div>
+            <div class="col">
+                <i class="bi bi-alarm fs-1"></i>
+                <div>fs-1</div>
+            </div>
+        </div>
+
+        <!-- Icon Colors -->
+        <h2 class="mb-3">Icon Colors</h2>
+        <div class="row text-center g-3 mb-5">
+            <div class="col">
+                <i class="bi bi-star-fill text-primary fs-2"></i>
+                <div>Primary</div>
+            </div>
+            <div class="col">
+                <i class="bi bi-star-fill text-success fs-2"></i>
+                <div>Success</div>
+            </div>
+            <div class="col">
+                <i class="bi bi-star-fill text-danger fs-2"></i>
+                <div>Danger</div>
+            </div>
+            <div class="col">
+                <i class="bi bi-star-fill text-warning fs-2"></i>
+                <div>Warning</div>
+            </div>
+            <div class="col">
+                <i class="bi bi-star-fill text-info fs-2"></i>
+                <div>Info</div>
+            </div>
+            <div class="col">
+                <i class="bi bi-star-fill text-dark fs-2"></i>
+                <div>Dark</div>
+            </div>
+        </div>
+
+        <!-- Buttons with Icons -->
+        <h2 class="mb-3">Buttons with Icons</h2>
+        <div class="d-flex gap-3 flex-wrap mb-5">
+            <button class="btn btn-primary"><i class="bi bi-download"></i> Download</button>
+            <button class="btn btn-success"><i class="bi bi-check-lg"></i> Save Changes</button>
+            <button class="btn btn-danger"><i class="bi bi-trash"></i> Delete</button>
+            <button class="btn btn-warning"><i class="bi bi-pencil"></i> Edit</button>
+            <button class="btn btn-info"><i class="bi bi-search"></i> Search</button>
+            <button class="btn btn-outline-primary"><i class="bi bi-heart"></i> Like</button>
+        </div>
+
+        <!-- Installation Guide -->
+        <div class="card mb-5">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">How to Install Bootstrap Icons</h4>
+            </div>
+            <div class="card-body">
+                <h5>Method 1: CDN (Recommended)</h5>
+                <pre class="bg-light p-3 rounded"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"&gt;</code></pre>
+                
+                <h5 class="mt-3">Method 2: npm</h5>
+                <pre class="bg-light p-3 rounded"><code>npm install bootstrap-icons</code></pre>
+                
+                <h5 class="mt-3">Method 3: Download</h5>
+                <p>Download from <a href="https://icons.getbootstrap.com" target="_blank">icons.getbootstrap.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer with Social Media Icons -->
+    <footer class="social-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5><i class="bi bi-bootstrap-fill"></i> Bootstrap Icons Demo</h5>
+                    <p class="text-white-50">Showcasing Bootstrap Icons with social media icons in the footer.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-chevron-right"></i> Home</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-chevron-right"></i> About Us</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-chevron-right"></i> Services</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="mb-3">
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-github"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+                    </div>
+                    <p class="text-white-50 small">
+                        <i class="bi bi-envelope"></i> info@example.com<br>
+                        <i class="bi bi-telephone"></i> +1 (555) 123-4567
+                    </p>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="text-center">
+                <p class="mb-0 text-white-50">
+                    <i class="bi bi-c-circle"></i> 2024 Bootstrap Icons Exercise | CTS Digital Nurture 5.0
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

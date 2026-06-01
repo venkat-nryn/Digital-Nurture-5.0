@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4.1 - Two Column Layout (Sidebar + Content)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        .sidebar {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+        .sidebar-item {
+            color: white;
+            padding: 12px 20px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sidebar-item:hover {
+            background-color: rgba(255,255,255,0.1);
+            transform: translateX(5px);
+        }
+        .sidebar-item i {
+            width: 25px;
+        }
+        .main-content {
+            padding: 30px;
+            background-color: white;
+            min-height: 100vh;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .dashboard-header {
+            border-bottom: 2px solid #e9ecef;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+        }
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .breadcrumb-custom {
+            background-color: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 8px;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <!-- Sidebar - col-md-3 -->
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <div class="text-center mb-4">
+                        <img src="https://via.placeholder.com/80x80/ffffff/2c3e50?text=Logo" class="rounded-circle mb-3" width="80" height="80">
+                        <h5 class="text-white">Dashboard</h5>
+                        <p class="text-white-50 small">Admin Panel</p>
+                    </div>
+                    
+                    <div class="sidebar-item">
+                        <i class="bi bi-speedometer2"></i>
+                        <span>Dashboard</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <i class="bi bi-person"></i>
+                        <span>Profile</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <i class="bi bi-envelope"></i>
+                        <span>Messages</span>
+                        <span class="badge bg-danger ms-auto">3</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <i class="bi bi-gear"></i>
+                        <span>Settings</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <i class="bi bi-bar-chart"></i>
+                        <span>Analytics</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <i class="bi bi-file-earmark-text"></i>
+                        <span>Reports</span>
+                    </div>
+                    <hr class="bg-light">
+                    <div class="sidebar-item">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span>Logout</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content Area - col-md-9 -->
+            <div class="col-md-9">
+                <div class="main-content">
+                    <div class="dashboard-header d-flex justify-content-between align-items-center">
+                        <div>
+                            <h2 class="mb-0">Welcome back, Admin!</h2>
+                            <p class="text-muted">Here's what's happening with your projects today.</p>
+                        </div>
+                        <div>
+                            <img src="https://via.placeholder.com/40x40/007bff/ffffff?text=U" class="rounded-circle border">
+                        </div>
+                    </div>
+
+                    <!-- Statistics Cards -->
+                    <div class="row mb-4">
+                        <div class="col-md-3 col-6">
+                            <div class="stat-card bg-primary">
+                                <i class="bi bi-people fs-1"></i>
+                                <h3 class="mt-2">1,234</h3>
+                                <p class="mb-0">Total Users</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="stat-card bg-success">
+                                <i class="bi bi-cart fs-1"></i>
+                                <h3 class="mt-2">567</h3>
+                                <p class="mb-0">Sales Today</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="stat-card bg-warning">
+                                <i class="bi bi-currency-dollar fs-1"></i>
+                                <h3 class="mt-2">$12,345</h3>
+                                <p class="mb-0">Revenue</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="stat-card bg-info">
+                                <i class="bi bi-graph-up fs-1"></i>
+                                <h3 class="mt-2">+23.5%</h3>
+                                <p class="mb-0">Growth</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity Section -->
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0"><i class="bi bi-activity"></i> Recent Activity</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <i class="bi bi-person-plus text-success"></i>
+                                                New user registered
+                                            </div>
+                                            <small class="text-muted">2 mins ago</small>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <i class="bi bi-cart-check text-primary"></i>
+                                                Order #1234 completed
+                                            </div>
+                                            <small class="text-muted">15 mins ago</small>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <i class="bi bi-chat-dots text-info"></i>
+                                                New comment on post
+                                            </div>
+                                            <small class="text-muted">1 hour ago</small>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0"><i class="bi bi-calendar"></i> Upcoming Tasks</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between">
+                                            <span>Team Meeting</span>
+                                            <span class="badge bg-primary">10:00 AM</span>
+                                        </div>
+                                        <div class="progress mt-1">
+                                            <div class="progress-bar" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between">
+                                            <span>Project Review</span>
+                                            <span class="badge bg-warning">2:00 PM</span>
+                                        </div>
+                                        <div class="progress mt-1">
+                                            <div class="progress-bar bg-warning" style="width: 40%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table Section -->
+                    <div class="card mt-4">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0"><i class="bi bi-table"></i> Recent Orders</h5>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Order ID</th>
+                                            <th>Customer</th>
+                                            <th>Product</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#1001</td>
+                                            <td>John Doe</td>
+                                            <td>Laptop Pro</td>
+                                            <td>$1,299</td>
+                                            <td><span class="badge bg-success">Delivered</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#1002</td>
+                                            <td>Jane Smith</td>
+                                            <td>Wireless Mouse</td>
+                                            <td>$29</td>
+                                            <td><span class="badge bg-warning">Processing</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#1003</td>
+                                            <td>Bob Johnson</td>
+                                            <td>Keyboard</td>
+                                            <td>$89</td>
+                                            <td><span class="badge bg-info">Shipped</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Layout Explanation -->
+                    <div class="alert alert-info mt-4">
+                        <h5><i class="bi bi-info-circle-fill"></i> Layout Structure:</h5>
+                        <p class="mb-0">This is a two-column layout using Bootstrap's grid system:</p>
+                        <ul class="mt-2 mb-0">
+                            <li><code>col-md-3</code> - Sidebar (3 columns wide on medium screens and above)</li>
+                            <li><code>col-md-9</code> - Main content area (9 columns wide on medium screens and above)</li>
+                            <li><strong>Total:</strong> 3 + 9 = 12 columns</li>
+                            <li><strong>Responsive:</strong> On mobile (less than 768px), columns stack vertically</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

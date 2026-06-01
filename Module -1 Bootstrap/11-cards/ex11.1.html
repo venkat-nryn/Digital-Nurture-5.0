@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 11.1 - Profile Card with Bootstrap Card Components</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        .profile-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-top: -60px;
+            margin-bottom: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            transition: all 0.3s;
+            margin: 0 5px;
+        }
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+        .badge-skill {
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 3px;
+            display: inline-block;
+        }
+        .stats-item {
+            text-align: center;
+            padding: 10px;
+            border-right: 1px solid #dee2e6;
+        }
+        .stats-item:last-child {
+            border-right: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4">Profile Cards</h1>
+            <p class="lead">Using Bootstrap card components: <code>card</code>, <code>card-body</code>, <code>card-title</code>, <code>card-img-top</code></p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Profile Card 1 - Professional -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card profile-card">
+                    <img src="https://picsum.photos/id/64/400/200" class="card-img-top" alt="Cover Image">
+                    <div class="card-body text-center">
+                        <img src="https://picsum.photos/id/64/120/120" alt="Profile" class="profile-avatar">
+                        <h5 class="card-title mt-2">Sarah Johnson</h5>
+                        <p class="text-muted">Senior UX Designer</p>
+                        <p class="card-text small">Creative designer with 8+ years of experience in creating beautiful and functional user interfaces.</p>
+                        <div class="social-links mb-3">
+                            <a href="#" class="bg-primary text-white"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="bg-info text-white"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="bg-danger text-white"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="bg-dark text-white"><i class="bi bi-github"></i></a>
+                        </div>
+                        <div class="d-flex justify-content-around mt-3">
+                            <div class="stats-item">
+                                <h6 class="mb-0">1.2k</h6>
+                                <small class="text-muted">Followers</small>
+                            </div>
+                            <div class="stats-item">
+                                <h6 class="mb-0">345</h6>
+                                <small class="text-muted">Following</small>
+                            </div>
+                            <div class="stats-item">
+                                <h6 class="mb-0">89</h6>
+                                <small class="text-muted">Projects</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary mt-3 w-100">Follow</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Card 2 - Developer -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card profile-card">
+                    <img src="https://picsum.photos/id/26/400/200" class="card-img-top" alt="Cover Image">
+                    <div class="card-body text-center">
+                        <img src="https://picsum.photos/id/26/120/120" alt="Profile" class="profile-avatar">
+                        <h5 class="card-title mt-2">Michael Chen</h5>
+                        <p class="text-muted">Full Stack Developer</p>
+                        <p class="card-text small">Passionate developer specializing in React, Node.js, and Cloud Technologies.</p>
+                        <div class="mb-3">
+                            <span class="badge-skill">React</span>
+                            <span class="badge-skill">Node.js</span>
+                            <span class="badge-skill">Python</span>
+                            <span class="badge-skill">AWS</span>
+                        </div>
+                        <div class="d-flex justify-content-around mt-3">
+                            <div class="stats-item">
+                                <h6 class="mb-0">2.5k</h6>
+                                <small class="text-muted">Followers</small>
+                            </div>
+                            <div class="stats-item">
+                                <h6 class="mb-0">678</h6>
+                                <small class="text-muted">Following</small>
+                            </div>
+                            <div class="stats-item">
+                                <h6 class="mb-0">156</h6>
+                                <small class="text-muted">Commits</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline-primary mt-3 w-100">View Portfolio</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Card 3 - Business -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card profile-card">
+                    <img src="https://picsum.photos/id/20/400/200" class="card-img-top" alt="Cover Image">
+                    <div class="card-body text-center">
+                        <img src="https://picsum.photos/id/20/120/120" alt="Profile" class="profile-avatar">
+                        <h5 class="card-title mt-2">Emily Rodriguez</h5>
+                        <p class="text-muted">Marketing Director</p>
+                        <p class="card-text small">Strategic marketing professional driving brand growth and digital transformation.</p>
+                        <div class="mb-3">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-half text-warning"></i>
+                            <span class="text-muted ms-2">4.8 (245 reviews)</span>
+                        </div>
+                        <div class="d-flex justify-content-around mt-3">
+                            <div class="stats-item">
+                                <h6 class="mb-0">5.2k</h6>
+                                <small class="text-muted">Connections</small>
+                            </div>
+                            <div class="stats-item">
+                                <h6 class="mb-0">48</h6>
+                                <small class="text-muted">Campaigns</small>
+                            </div>
+                            <div class="stats-item">
+                                <h6 class="mb-0">23</h6>
+                                <small class="text-muted">Awards</small>
+                            </div>
+                        </div>
+                        <button class="btn btn-success mt-3 w-100">Connect</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Card Variations -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Simple Card</h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card Title</h5>
+                        <p class="card-text">Basic card with header, body, and footer.</p>
+                        <button class="btn btn-primary">Action</button>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Last updated 3 mins ago
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="bi bi-award fs-1 text-warning"></i>
+                        <h5 class="card-title">Achievement Unlocked</h5>
+                        <p class="card-text">You've completed all exercises!</p>
+                        <span class="badge bg-success">Congratulations!</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card text-white bg-dark">
+                    <div class="card-body">
+                        <h5 class="card-title">Dark Card</h5>
+                        <p class="card-text">Cards can have different background colors using contextual classes.</p>
+                        <button class="btn btn-light">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Components Reference -->
+        <div class="card mt-5">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">Card Components Reference</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-light">
+                            <tr><th>Component</th><th>Description</th><th>Example</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>.card</code></td><td>Container for card content</td><td>&lt;div class="card"&gt;...&lt;/div&gt;</td></tr>
+                            <tr><td><code>.card-header</code></td><td>Optional header section</td><td>&lt;div class="card-header"&gt;Header&lt;/div&gt;</td></tr>
+                            <tr><td><code>.card-body</code></td><td>Main content area</td><td>&lt;div class="card-body"&gt;Content&lt;/div&gt;</td></tr>
+                            <tr><td><code>.card-title</code></td><td>Card title styling</td><td>&lt;h5 class="card-title"&gt;Title&lt;/h5&gt;</td></tr>
+                            <tr><td><code>.card-text</code></td><td>Text styling within card</td><td>&lt;p class="card-text"&gt;Text&lt;/p&gt;</td></tr>
+                            <tr><td><code>.card-img-top</code></td><td>Image at top of card</td><td>&lt;img class="card-img-top"&gt;</td></tr>
+                            <tr><td><code>.card-footer</code></td><td>Optional footer section</td><td>&lt;div class="card-footer"&gt;Footer&lt;/div&gt;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

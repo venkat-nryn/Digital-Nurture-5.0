@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 9.1 - Bootstrap Button Contextual Classes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        .button-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .btn-demo {
+            margin: 5px;
+        }
+        .btn-size-demo {
+            margin: 10px;
+        }
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <div class="text-center mb-5">
+            <h1 class="display-4">Bootstrap Buttons</h1>
+            <p class="lead">All contextual button classes and variations</p>
+        </div>
+
+        <!-- Standard Buttons -->
+        <div class="button-section">
+            <h3 class="mb-3"><i class="bi bi-palette"></i> Standard Buttons</h3>
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" class="btn btn-primary btn-demo">Primary</button>
+                    <button type="button" class="btn btn-secondary btn-demo">Secondary</button>
+                    <button type="button" class="btn btn-success btn-demo">Success</button>
+                    <button type="button" class="btn btn-danger btn-demo">Danger</button>
+                    <button type="button" class="btn btn-warning btn-demo">Warning</button>
+                    <button type="button" class="btn btn-info btn-demo">Info</button>
+                    <button type="button" class="btn btn-light btn-demo">Light</button>
+                    <button type="button" class="btn btn-dark btn-demo">Dark</button>
+                    <button type="button" class="btn btn-link btn-demo">Link</button>
+                </div>
+            </div>
+            <div class="code-block">
+                &lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;<br>
+                &lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;<br>
+                &lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
+            </div>
+        </div>
+
+        <!-- Outline Buttons -->
+        <div class="button-section">
+            <h3 class="mb-3"><i class="bi bi-border-width"></i> Outline Buttons</h3>
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" class="btn btn-outline-primary btn-demo">Primary</button>
+                    <button type="button" class="btn btn-outline-secondary btn-demo">Secondary</button>
+                    <button type="button" class="btn btn-outline-success btn-demo">Success</button>
+                    <button type="button" class="btn btn-outline-danger btn-demo">Danger</button>
+                    <button type="button" class="btn btn-outline-warning btn-demo">Warning</button>
+                    <button type="button" class="btn btn-outline-info btn-demo">Info</button>
+                    <button type="button" class="btn btn-outline-light btn-demo bg-dark">Light</button>
+                    <button type="button" class="btn btn-outline-dark btn-demo">Dark</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button Sizes -->
+        <div class="button-section">
+            <h3 class="mb-3"><i class="bi bi-arrows-angle-expand"></i> Button Sizes</h3>
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                    <button type="button" class="btn btn-primary btn-lg btn-size-demo">Large button</button>
+                    <div class="mt-2"><code>.btn-lg</code></div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <button type="button" class="btn btn-primary btn-size-demo">Default button</button>
+                    <div class="mt-2"><code>.btn (default)</code></div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <button type="button" class="btn btn-primary btn-sm btn-size-demo">Small button</button>
+                    <div class="mt-2"><code>.btn-sm</code></div>
+                </div>
+            </div>
+            <div class="mt-3 text-center">
+                <button type="button" class="btn btn-primary w-100">Full width button</button>
+                <div class="mt-2"><code>.w-100</code> or <code>.d-grid</code></div>
+            </div>
+        </div>
+
+        <!-- Buttons with Icons -->
+        <div class="button-section">
+            <h3 class="mb-3"><i class="bi bi-icons"></i> Buttons with Icons</h3>
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-primary">
+                        <i class="bi bi-envelope"></i> Send Message
+                    </button>
+                    <button class="btn btn-success">
+                        <i class="bi bi-download"></i> Download
+                    </button>
+                    <button class="btn btn-danger">
+                        <i class="bi bi-trash"></i> Delete
+                    </button>
+                    <button class="btn btn-warning">
+                        <i class="bi bi-pencil"></i> Edit
+                    </button>
+                    <button class="btn btn-info">
+                        <i class="bi bi-search"></i> Search
+                    </button>
+                    <button class="btn btn-dark">
+                        <i class="bi bi-gear"></i> Settings
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disabled and Active States -->
+        <div class="button-section">
+            <h3 class="mb-3"><i class="bi bi-toggle-on"></i> Disabled & Active States</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Disabled Buttons</h5>
+                    <button class="btn btn-primary" disabled>Primary Disabled</button>
+                    <button class="btn btn-success" disabled>Success Disabled</button>
+                    <button class="btn btn-outline-danger" disabled>Outline Disabled</button>
+                </div>
+                <div class="col-md-6">
+                    <h5>Active Buttons</h5>
+                    <button class="btn btn-primary active">Active Primary</button>
+                    <button class="btn btn-success active">Active Success</button>
+                    <a href="#" class="btn btn-info active" role="button">Active Link</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Block Buttons -->
+        <div class="button-section">
+            <h3 class="mb-3"><i class="bi bi-grid"></i> Block Buttons</h3>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button">Full width button</button>
+                <button class="btn btn-success" type="button">Another full width button</button>
+            </div>
+            <div class="d-grid gap-2 d-md-block mt-3">
+                <button class="btn btn-primary" type="button">Button</button>
+                <button class="btn btn-primary" type="button">Button</button>
+            </div>
+            <div class="code-block mt-3">
+                &lt;div class="d-grid gap-2"&gt;<br>
+                &nbsp;&nbsp;&lt;button class="btn btn-primary"&gt;Full width&lt;/button&gt;<br>
+                &lt;/div&gt;
+            </div>
+        </div>
+
+        <!-- Complete Reference Table -->
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">Button Classes Reference</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-light">
+                            <tr><th>Class</th><th>Description</th><th>Example</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>.btn-primary</code></td><td>Primary action button</td><td><button class="btn btn-primary btn-sm">Primary</button></td></tr>
+                            <tr><td><code>.btn-secondary</code></td><td>Secondary action button</td><td><button class="btn btn-secondary btn-sm">Secondary</button></td></tr>
+                            <tr><td><code>.btn-success</code></td><td>Success/positive action</td><td><button class="btn btn-success btn-sm">Success</button></td></tr>
+                            <tr><td><code>.btn-danger</code></td><td>Danger/negative action</td><td><button class="btn btn-danger btn-sm">Danger</button></td></tr>
+                            <tr><td><code>.btn-warning</code></td><td>Warning/caution action</td><td><button class="btn btn-warning btn-sm">Warning</button></td></tr>
+                            <tr><td><code>.btn-info</code></td><td>Info/neutral action</td><td><button class="btn btn-info btn-sm">Info</button></td></tr>
+                            <tr><td><code>.btn-light</code></td><td>Light button</td><td><button class="btn btn-light btn-sm">Light</button></td></tr>
+                            <tr><td><code>.btn-dark</code></td><td>Dark button</td><td><button class="btn btn-dark btn-sm">Dark</button></td></tr>
+                            <tr><td><code>.btn-link</code></td><td>Link styled as button</td><td><button class="btn btn-link btn-sm">Link</button></td></tr>
+                            <tr><td><code>.btn-outline-*</code></td><td>Outline variants</td><td><button class="btn btn-outline-primary btn-sm">Outline</button></td></tr>
+                            <tr><td><code>.btn-lg</code></td><td>Large button</td><td><button class="btn btn-primary btn-sm btn-lg">Large</button></td></tr>
+                            <tr><td><code>.btn-sm</code></td><td>Small button</td><td><button class="btn btn-primary btn-sm">Small</button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

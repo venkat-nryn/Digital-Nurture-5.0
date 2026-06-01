@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2.2 - Bootstrap JavaScript Plugins Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .plugin-demo {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 0;
+            color: white;
+        }
+        .demo-card {
+            transition: all 0.3s;
+            height: 100%;
+        }
+        .demo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .plugin-icon {
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="plugin-demo text-center">
+        <div class="container">
+            <h1 class="display-4">Bootstrap JavaScript Plugins</h1>
+            <p class="lead">Interactive components powered by bootstrap.bundle.min.js</p>
+            <span class="badge bg-light text-dark p-2">✓ All plugins active</span>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="alert alert-success">
+            <strong>✓ bootstrap.bundle.min.js is included!</strong> This file includes both Bootstrap JS and Popper.js.
+        </div>
+
+        <!-- Plugin Showcase Grid -->
+        <div class="row g-4">
+            <!-- Modal Plugin -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card demo-card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-window fs-1 text-primary"></i>
+                        <h4 class="mt-2">Modal</h4>
+                        <p>Create dialogs, lightboxes, and custom content popups</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#demoModal">
+                            Launch Modal
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dropdown Plugin -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card demo-card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-caret-down-square fs-1 text-success"></i>
+                        <h4 class="mt-2">Dropdown</h4>
+                        <p>Toggle contextual overlays for displaying lists of links</p>
+                        <div class="dropdown">
+                            <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                Dropdown Menu
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tooltip Plugin -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card demo-card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-chat-square-quote fs-1 text-info"></i>
+                        <h4 class="mt-2">Tooltip</h4>
+                        <p>Add informative popup hints on hover/focus</p>
+                        <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="top" title="This is a Bootstrap tooltip!">
+                            Hover over me
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popover Plugin -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card demo-card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-info-circle fs-1 text-warning"></i>
+                        <h4 class="mt-2">Popover</h4>
+                        <p>Extended tooltip with title and content</p>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="popover" title="Popover Title" data-bs-content="This is popover content with more details!">
+                            Click me
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collapse Plugin -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card demo-card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-layout-sidebar fs-1 text-danger"></i>
+                        <h4 class="mt-2">Collapse</h4>
+                        <p>Toggle visibility of content</p>
+                        <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample">
+                            Toggle Content
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Plugin -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card demo-card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-images fs-1 text-secondary"></i>
+                        <h4 class="mt-2">Carousel</h4>
+                        <p>Slideshow component for cycling through elements</p>
+                        <div id="simpleCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="bg-secondary p-3 text-white rounded">Slide 1</div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="bg-info p-3 text-white rounded">Slide 2</div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#simpleCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#simpleCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collapse Content -->
+        <div class="collapse mt-3" id="collapseExample">
+            <div class="card card-body">
+                This content is revealed using Bootstrap's Collapse plugin! You can toggle it with the button above.
+            </div>
+        </div>
+
+        <!-- Tab Plugin -->
+        <div class="card mt-4">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">Tabs Plugin (via JavaScript)</h4>
+            </div>
+            <div class="card-body">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#home" type="button">Home</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile" type="button">Profile</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact" type="button">Contact</button>
+                    </li>
+                </ul>
+                <div class="tab-content mt-3">
+                    <div class="tab-pane fade show active" id="home">
+                        <p>Home tab content - Bootstrap tabs are powered by JavaScript!</p>
+                    </div>
+                    <div class="tab-pane fade" id="profile">
+                        <p>Profile tab content - Smooth transitions between panes.</p>
+                    </div>
+                    <div class="tab-pane fade" id="contact">
+                        <p>Contact tab content - All interactive components work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast Plugin -->
+        <div class="card mt-4">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">Toast Notifications</h4>
+            </div>
+            <div class="card-body text-center">
+                <button class="btn btn-dark" onclick="showToast()">Show Toast Notification</button>
+                <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                    <div id="liveToast" class="toast" role="alert" data-bs-autohide="true" data-bs-delay="3000">
+                        <div class="toast-header">
+                            <strong class="me-auto">Bootstrap Toast</strong>
+                            <small>Just now</small>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                        </div>
+                        <div class="toast-body">
+                            This is a toast notification powered by Bootstrap's JS!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal fade" id="demoModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Bootstrap Modal with JavaScript</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This modal is created using Bootstrap's Modal JavaScript plugin.</p>
+                    <p>Features include:</p>
+                    <ul>
+                        <li>Keyboard navigation (ESC to close)</li>
+                        <li>Click backdrop to close</li>
+                        <li>Focus trapping</li>
+                        <li>Scroll handling</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Initialization Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize all tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
+        // Initialize all popovers
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+
+        // Toast function
+        function showToast() {
+            var toastEl = document.getElementById('liveToast')
+            var toast = new bootstrap.Toast(toastEl)
+            toast.show()
+        }
+
+        // Demonstrate programmatic modal control
+        console.log('All Bootstrap JavaScript plugins are initialized and ready!');
+        console.log('bootstrap.bundle.min.js includes:', Object.keys(bootstrap));
+    </script>
+</body>
+</html>

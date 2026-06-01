@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 18.2 - Collapsible Accordion with Bootstrap JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .accordion-custom .accordion-button:not(.collapsed) {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .accordion-custom .accordion-button:not(.collapsed)::after {
+            filter: brightness(0) invert(1);
+        }
+        .faq-section {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 20px;
+        }
+        .accordion-flush-custom .accordion-item {
+            border: none;
+            margin-bottom: 10px;
+            border-radius: 10px !important;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4">Bootstrap Accordion</h1>
+            <p class="lead">Collapsible accordion using Bootstrap's JavaScript collapse plugin</p>
+        </div>
+
+        <!-- Basic Accordion -->
+        <h2 class="mb-3"><i class="bi bi-layout-three-columns"></i> Basic Accordion</h2>
+        <div class="accordion mb-5" id="basicAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        Accordion Item #1
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#basicAccordion">
+                    <div class="accordion-body">
+                        <strong>This is the first accordion item's body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        Accordion Item #2
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#basicAccordion">
+                    <div class="accordion-body">
+                        <strong>This is the second accordion item's body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#basicAccordion">
+                    <div class="accordion-body">
+                        <strong>This is the third accordion item's body.</strong> You can put any HTML content here - text, images, forms, etc.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Styled Accordion -->
+        <h2 class="mb-3"><i class="bi bi-palette"></i> Custom Styled Accordion</h2>
+        <div class="accordion accordion-custom mb-5" id="customAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#customOne">
+                        <i class="bi bi-star-fill me-2 text-warning"></i> Featured Question
+                    </button>
+                </h2>
+                <div id="customOne" class="accordion-collapse collapse show" data-bs-parent="#customAccordion">
+                    <div class="accordion-body">
+                        This is a custom styled accordion with gradient backgrounds and icons.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#customTwo">
+                        <i class="bi bi-question-circle me-2"></i> Another Question
+                    </button>
+                </h2>
+                <div id="customTwo" class="accordion-collapse collapse" data-bs-parent="#customAccordion">
+                    <div class="accordion-body">
+                        You can customize the accordion appearance using CSS. The button background, colors, and icons can all be styled.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <h2 class="mb-3"><i class="bi bi-question-lg"></i> Frequently Asked Questions</h2>
+        <div class="faq-section mb-5">
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            What is Bootstrap?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Bootstrap is a free, open-source front-end framework for developing responsive, mobile-first websites. It includes HTML, CSS, and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            How do I install Bootstrap?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            You can install Bootstrap via CDN, npm, or by downloading the compiled files. The easiest way is to use the CDN links in your HTML file.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Is Bootstrap free to use?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, Bootstrap is completely free to use. It is released under the MIT license, which allows you to use it for personal and commercial projects.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            What's new in Bootstrap 5?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Bootstrap 5 includes many new features: dropped jQuery dependency, added RTL support, new offcanvas component, updated forms, enhanced grid system, and improved utilities.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flush Accordion (No borders) -->
+        <h2 class="mb-3"><i class="bi bi-border-width"></i> Flush Accordion (No Borders)</h2>
+        <div class="accordion accordion-flush mb-5" id="flushAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flushOne">
+                        Flush Accordion Item #1
+                    </button>
+                </h2>
+                <div id="flushOne" class="accordion-collapse collapse" data-bs-parent="#flushAccordion">
+                    <div class="accordion-body">This accordion has no borders or background colors.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flushTwo">
+                        Flush Accordion Item #2
+                    </button>
+                </h2>
+                <div id="flushTwo" class="accordion-collapse collapse" data-bs-parent="#flushAccordion">
+                    <div class="accordion-body">Great for minimalist designs.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion with Icons in Content -->
+        <h2 class="mb-3"><i class="bi bi-grid"></i> Nested Content in Accordion</h2>
+        <div class="accordion mb-5" id="nestedAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#nestedOne">
+                        <i class="bi bi-person-badge me-2"></i> User Profile Information
+                    </button>
+                </h2>
+                <div id="nestedOne" class="accordion-collapse collapse show" data-bs-parent="#nestedAccordion">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><i class="bi bi-person"></i> <strong>Name:</strong> John Doe</p>
+                                <p><i class="bi bi-envelope"></i> <strong>Email:</strong> john@example.com</p>
+                                <p><i class="bi bi-phone"></i> <strong>Phone:</strong> +1 234 567 8900</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><i class="bi bi-geo-alt"></i> <strong>Location:</strong> New York, USA</p>
+                                <p><i class="bi bi-briefcase"></i> <strong>Role:</strong> Developer</p>
+                                <p><i class="bi bi-calendar"></i> <strong>Joined:</strong> Jan 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nestedTwo">
+                        <i class="bi bi-graph-up me-2"></i> Statistics
+                    </button>
+                </h2>
+                <div id="nestedTwo" class="accordion-collapse collapse" data-bs-parent="#nestedAccordion">
+                    <div class="accordion-body">
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <h3>1,234</h3>
+                                <small>Projects</small>
+                            </div>
+                            <div class="col-4">
+                                <h3>89%</h3>
+                                <small>Success Rate</small>
+                            </div>
+                            <div class="col-4">
+                                <h3>567</h3>
+                                <small>Reviews</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript Accordion Control -->
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0"><i class="bi bi-sliders2"></i> Programmatic Accordion Control</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <button class="btn btn-primary w-100 mb-2" id="openFirst">Open First Item</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-secondary w-100 mb-2" id="closeFirst">Close First Item</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-info w-100 mb-2" id="toggleFirst">Toggle First Item</button>
+                    </div>
+                </div>
+                <div class="alert alert-info mt-3">
+                    <i class="bi bi-code-slash"></i> Using Bootstrap's JavaScript API to control accordion programmatically.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Get the collapse element
+        const collapseElement = document.getElementById('collapseOne');
+        const collapse = new bootstrap.Collapse(collapseElement, {
+            toggle: false
+        });
+
+        document.getElementById('openFirst').addEventListener('click', () => {
+            collapse.show();
+        });
+
+        document.getElementById('closeFirst').addEventListener('click', () => {
+            collapse.hide();
+        });
+
+        document.getElementById('toggleFirst').addEventListener('click', () => {
+            collapse.toggle();
+        });
+    </script>
+</body>
+</html>

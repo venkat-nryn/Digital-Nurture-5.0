@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4.2 - Four Column Equal Width Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        .product-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .product-body {
+            padding: 20px;
+        }
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .rating {
+            color: #ffc107;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .responsive-demo {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 30px;
+            border-radius: 15px;
+            color: white;
+        }
+        @media (max-width: 576px) {
+            .product-card {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="text-center mb-5">
+            <h1 class="display-4">Four Column Equal Width Layout</h1>
+            <p class="lead">Using <code>col-sm-3</code> - Each column takes 3 out of 12 columns</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <span class="badge bg-primary p-2">📱 Mobile: 1 column</span>
+                <span class="badge bg-success p-2">📱 Tablet: 2 columns</span>
+                <span class="badge bg-info p-2">💻 Desktop: 4 columns</span>
+            </div>
+        </div>
+
+        <!-- Product Grid - 4 Columns -->
+        <div class="row g-4">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="bi bi-laptop fs-1"></i>
+                    </div>
+                    <div class="product-body">
+                        <h5>Laptop Pro</h5>
+                        <p class="text-muted small">High-performance laptop for professionals</p>
+                        <div class="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <div class="price mt-2">$1,299</div>
+                        <button class="btn btn-primary w-100 mt-3">
+                            <i class="bi bi-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <i class="bi bi-phone fs-1"></i>
+                    </div>
+                    <div class="product-body">
+                        <h5>Smartphone X</h5>
+                        <p class="text-muted small">Latest model with advanced camera</p>
+                        <div class="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="price mt-2">$899</div>
+                        <button class="btn btn-primary w-100 mt-3">
+                            <i class="bi bi-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <i class="bi bi-headphones fs-1"></i>
+                    </div>
+                    <div class="product-body">
+                        <h5>Wireless Headphones</h5>
+                        <p class="text-muted small">Noise cancelling with great sound</p>
+                        <div class="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <div class="price mt-2">$199</div>
+                        <button class="btn btn-primary w-100 mt-3">
+                            <i class="bi bi-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <i class="bi bi-watch fs-1"></i>
+                    </div>
+                    <div class="product-body">
+                        <h5>Smart Watch</h5>
+                        <p class="text-muted small">Track your fitness and health</p>
+                        <div class="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <div class="price mt-2">$299</div>
+                        <button class="btn btn-primary w-100 mt-3">
+                            <i class="bi bi-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Row of Products -->
+        <div class="row g-4 mt-2">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <i class="bi bi-camera fs-1"></i>
+                    </div>
+                    <div class="product-body">
+                        <h5>DSLR Camera</h5>
+                        <p class="text-muted small">Professional photography gear</p>
+                        <div class="price mt-2">$1,499</div>
+                        <button class="btn btn-outline-primary w-100 mt-3">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        <i class="bi bi-speaker fs-1"></i>
+                    </div>
+                    <div class="product-body">
+                        <h5>Bluetooth Speaker</h5>
+                        <p class="text-muted small">Portable with amazing bass</p>
+                        <div class="price mt-2">$149</div>
+                        <button class="btn btn-outline-primary w-100 mt-3">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%);">
+                        <i class="bi bi-controller fs-1"></i>
+                    </div>
+                    <div class="product-body">
+                        <h5>Gaming Console</h5>
+                        <p class="text-muted small">Next-gen gaming experience</p>
+                        <div class="price mt-2">$499</div>
+                        <button class="btn btn-outline-primary w-100 mt-3">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+                        <i class="bi bi-printer fs-1"></i>
+                    </div>
+                    <div class="product-body">
+                        <h5>Wireless Printer</h5>
+                        <p class="text-muted small">Print from anywhere</p>
+                        <div class="price mt-2">$249</div>
+                        <button class="btn btn-outline-primary w-100 mt-3">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature Section with 4 Columns -->
+        <h2 class="mt-5 mb-4 text-center">Why Choose Us?</h2>
+        <div class="row text-center g-4">
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="responsive-demo">
+                    <i class="bi bi-truck feature-icon"></i>
+                    <h5>Free Shipping</h5>
+                    <p class="small">On orders over $50</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="responsive-demo" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <i class="bi bi-shield-check feature-icon"></i>
+                    <h5>Secure Payment</h5>
+                    <p class="small">100% secure transactions</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="responsive-demo" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <i class="bi bi-arrow-repeat feature-icon"></i>
+                    <h5>30 Day Returns</h5>
+                    <p class="small">Easy return policy</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="responsive-demo" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <i class="bi bi-headset feature-icon"></i>
+                    <h5>24/7 Support</h5>
+                    <p class="small">Dedicated customer service</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid Explanation -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0"><i class="bi bi-grid-3x3-gap-fill"></i> Four Column Grid Explanation</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-success">
+                            <strong>Grid Classes Used:</strong>
+                            <ul class="mt-2 mb-0">
+                                <li><code>col-12</code> - Full width on mobile (extra small screens &lt;576px)</li>
+                                <li><code>col-sm-6</code> - 2 columns on small screens (≥576px)</li>
+                                <li><code>col-md-4</code> - 3 columns on medium screens (≥768px)</li>
+                                <li><code>col-lg-3</code> - 4 columns on large screens (≥992px)</li>
+                            </ul>
+                        </div>
+                        
+                        <h6>Breakdown per breakpoint:</h6>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr><th>Screen Size</th><th>Breakpoint</th><th>Columns per row</th><th>Class used</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Mobile</td><td>&lt;576px</td><td>1 column</td><td>col-12</td></tr>
+                                    <tr><td>Small Tablet</td><td>≥576px</td><td>2 columns</td><td>col-sm-6</td></tr>
+                                    <tr><td>Tablet</td><td>≥768px</td><td>3 columns</td><td>col-md-4</td></tr>
+                                    <tr><td>Desktop</td><td>≥992px</td><td>4 columns</td><td>col-lg-3</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="alert alert-info mt-3">
+                            <strong>Formula:</strong> Each column width = 12 ÷ number of columns.<br>
+                            4 columns: 12 ÷ 4 = 3 → <code>col-*-3</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Preview Example -->
+        <div class="card mt-4 mb-5">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Live Responsive Demo</h5>
+            </div>
+            <div class="card-body">
+                <div class="row" id="liveGrid">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+                        <div class="bg-info text-white p-3 text-center rounded">1</div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+                        <div class="bg-success text-white p-3 text-center rounded">2</div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+                        <div class="bg-warning text-white p-3 text-center rounded">3</div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+                        <div class="bg-danger text-white p-3 text-center rounded">4</div>
+                    </div>
+                </div>
+                <div class="alert alert-secondary mt-3">
+                    <strong>Current layout:</strong> <span id="currentLayout">Resize window to see changes</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0">Exercise 4.2 - Four Column Equal Width Layout (col-sm-3) | CTS Digital Nurture 5.0</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function updateLayoutInfo() {
+            const width = window.innerWidth;
+            let layout = '';
+            
+            if (width < 576) layout = 'Mobile: 1 column (col-12)';
+            else if (width < 768) layout = 'Small Tablet: 2 columns (col-sm-6)';
+            else if (width < 992) layout = 'Tablet: 3 columns (col-md-4)';
+            else layout = 'Desktop: 4 columns (col-lg-3)';
+            
+            document.getElementById('currentLayout').innerHTML = layout;
+        }
+        
+        window.addEventListener('resize', updateLayoutInfo);
+        updateLayoutInfo();
+    </script>
+</body>
+</html>

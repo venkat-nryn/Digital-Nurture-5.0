@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3.1 - Responsive Three Column Grid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .demo-col {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        .demo-col:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .breakpoint-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-family: monospace;
+            z-index: 1000;
+        }
+        .grid-demo {
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="text-center mb-5">
+            <h1 class="display-4">Responsive Three Column Grid</h1>
+            <p class="lead">Columns that adapt to different screen sizes</p>
+            <div class="d-flex justify-content-center gap-3">
+                <span class="badge bg-primary">📱 Mobile: Stacked (1 column)</span>
+                <span class="badge bg-success">📱 Tablet: 2 columns</span>
+                <span class="badge bg-info">💻 Desktop: 3 columns</span>
+            </div>
+        </div>
+
+        <!-- Responsive Grid Demo -->
+        <div class="grid-demo">
+            <h3 class="mb-3">Bootstrap Responsive Grid Classes:</h3>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="demo-col">
+                        <h3>Column 1</h3>
+                        <p class="mb-0">col-12 (mobile)<br>col-md-6 (tablet)<br>col-lg-4 (desktop)</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="demo-col">
+                        <h3>Column 2</h3>
+                        <p class="mb-0">col-12 (mobile)<br>col-md-6 (tablet)<br>col-lg-4 (desktop)</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="demo-col">
+                        <h3>Column 3</h3>
+                        <p class="mb-0">col-12 (mobile)<br>col-md-6 (tablet)<br>col-lg-4 (desktop)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Explanation of Breakpoints -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">Breakpoint Behavior</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead class="table-light">
+                                <tr><th>Screen Size</th><th>Breakpoint</th><th>Column Layout</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Mobile</td><td>&lt; 768px</td><td class="text-primary">Stacked (1 column)</td></tr>
+                                <tr><td>Tablet</td><td>≥ 768px (md)</td><td class="text-success">2 columns per row</td></tr>
+                                <tr><td>Desktop</td><td>≥ 992px (lg)</td><td class="text-info">3 columns per row</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0">Grid Classes Explained</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item"><code>col-12</code> = Full width on extra small screens</li>
+                            <li class="list-group-item"><code>col-md-6</code> = Half width on medium screens (768px+)</li>
+                            <li class="list-group-item"><code>col-lg-4</code> = One-third width on large screens (992px+)</li>
+                            <li class="list-group-item"><strong>Total columns:</strong> 12 (always add up to 12 per row)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alternative Layouts -->
+        <h3 class="mt-5 mb-3">Other Responsive Patterns:</h3>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="demo-col" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <h4>4 Columns</h4>
+                    <small>col-lg-3</small>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="demo-col" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <h4>4 Columns</h4>
+                    <small>col-lg-3</small>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="demo-col" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <h4>4 Columns</h4>
+                    <small>col-lg-3</small>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="demo-col" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <h4>4 Columns</h4>
+                    <small>col-lg-3</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nested Grid Example -->
+        <div class="card mt-5">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">Responsive Behavior Demo - Resize your browser!</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-info">
+                            <strong>Current Layout:</strong> 
+                            <span id="layoutStatus">Resize window to see changes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="breakpoint-indicator" id="breakpointIndicator">
+        Current Breakpoint: 
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">Exercise 3.1 - Responsive Three Column Grid | CTS Digital Nurture 5.0</p>
+        </div>
+    </footer>
+
+    <script>
+        function updateBreakpoint() {
+            const width = window.innerWidth;
+            let breakpoint = '';
+            let layout = '';
+            
+            if (width < 576) {
+                breakpoint = 'XS (<576px)';
+                layout = '📱 1 column (stacked)';
+            } else if (width < 768) {
+                breakpoint = 'SM (576px-767px)';
+                layout = '📱 1 column (stacked)';
+            } else if (width < 992) {
+                breakpoint = 'MD (768px-991px)';
+                layout = '📱 2 columns per row';
+            } else {
+                breakpoint = 'LG+ (≥992px)';
+                layout = '💻 3 columns per row';
+            }
+            
+            document.getElementById('breakpointIndicator').innerHTML = `Current Breakpoint: ${breakpoint} | ${layout}`;
+            if(document.getElementById('layoutStatus')) {
+                document.getElementById('layoutStatus').innerHTML = layout;
+            }
+        }
+        
+        window.addEventListener('resize', updateBreakpoint);
+        updateBreakpoint();
+    </script>
+</body>
+</html>

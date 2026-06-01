@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 14.1 - Display Utilities: d-none, d-md-block, d-lg-flex</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        .demo-block {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .responsive-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-family: monospace;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <div class="text-center mb-5">
+            <h1 class="display-4">Display Utilities</h1>
+            <p class="lead">Using <code>d-none</code>, <code>d-md-block</code>, <code>d-lg-flex</code> for responsive visibility</p>
+        </div>
+
+        <!-- Responsive Visibility Examples -->
+        <div class="row">
+            <div class="col-12">
+                <div class="demo-block d-none d-md-block">
+                    <i class="bi bi-eye fs-1"></i>
+                    <h3>Visible on Medium screens and above</h3>
+                    <p>This block uses <code>d-md-block</code>. It's hidden on mobile (<768px) and visible on tablet+.</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="demo-block d-none d-lg-flex align-items-center justify-content-between">
+                    <i class="bi bi-desktop fs-1"></i>
+                    <div>
+                        <h3>Visible on Large screens and above</h3>
+                        <p>This uses <code>d-lg-flex</code> - only visible on desktop (≥992px)</p>
+                    </div>
+                    <i class="bi bi-arrow-right fs-1"></i>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="demo-block d-block d-md-none" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <i class="bi bi-phone fs-1"></i>
+                    <h3>Visible ONLY on Mobile</h3>
+                    <p>This uses <code>d-block d-md-none</code> - only visible on screens smaller than 768px.</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="demo-block d-print-none" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: #000;">
+                    <i class="bi bi-printer fs-1"></i>
+                    <h3>Hidden when printing</h3>
+                    <p>This uses <code>d-print-none</code> - won't appear when you print the page.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Responsive Grid Example -->
+        <h2 class="mt-4 mb-3">Responsive Display in Grid</h2>
+        <div class="row g-3">
+            <div class="col-12 col-md-6 col-lg-4 d-none d-md-block">
+                <div class="bg-info text-white p-3 text-center rounded">
+                    Sidebar (visible on tablet+)
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-8">
+                <div class="bg-success text-white p-3 text-center rounded">
+                    Main Content (always visible)
+                </div>
+            </div>
+        </div>
+
+        <!-- Visibility Options Table -->
+        <div class="card mt-5">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">Display Utilities Reference</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-light">
+                            <tr><th>Class</th><th>Hidden on</th><th>Visible on</th><th>Use Case</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>.d-none</code></td><td>All screens</td><td>None</td><td>Always hidden</td></tr>
+                            <tr><td><code>.d-none .d-md-block</code></td><td>&lt;768px</td><td>≥768px</td><td>Show on tablet+</td></tr>
+                            <tr><td><code>.d-block .d-md-none</code></td><td>≥768px</td><td>&lt;768px</td><td>Show only on mobile</td></tr>
+                            <tr><td><code>.d-none .d-lg-flex</code></td><td>&lt;992px</td><td>≥992px</td><td>Show on desktop+</td></tr>
+                            <tr><td><code>.d-flex .d-lg-none</code></td><td>≥992px</td><td>&lt;992px</td><td>Hide on desktop</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="responsive-badge" id="screenSize">
+        Screen: 
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function updateScreenSize() {
+            const width = window.innerWidth;
+            let size = '';
+            if (width < 576) size = 'XS (<576px)';
+            else if (width < 768) size = 'SM (576-767px)';
+            else if (width < 992) size = 'MD (768-991px)';
+            else if (width < 1200) size = 'LG (992-1199px)';
+            else size = 'XL (≥1200px)';
+            document.getElementById('screenSize').innerHTML = `Screen: ${size} | Width: ${width}px`;
+        }
+        window.addEventListener('resize', updateScreenSize);
+        updateScreenSize();
+    </script>
+</body>
+</html>

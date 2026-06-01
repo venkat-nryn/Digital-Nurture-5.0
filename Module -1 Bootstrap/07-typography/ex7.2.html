@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 7.2 - Text Transform Utilities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        .transform-card {
+            transition: all 0.3s;
+            height: 100%;
+        }
+        .transform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .example-text {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-family: monospace;
+        }
+        .code-preview {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <div class="text-center mb-5">
+            <h1 class="display-4">Text Transform Utilities</h1>
+            <p class="lead">Using <code>text-uppercase</code>, <code>text-lowercase</code>, and <code>text-capitalize</code></p>
+        </div>
+
+        <!-- Main Demo -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card transform-card">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h4 class="mb-0">text-uppercase</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="text-uppercase display-6 mb-3">hello world</p>
+                        <div class="example-text">
+                            <span class="text-uppercase">This is a sample sentence with text-uppercase class.</span>
+                        </div>
+                        <div class="code-preview mt-3">
+                            &lt;p class="text-uppercase"&gt;<br>
+                            &nbsp;&nbsp;hello world<br>
+                            &lt;/p&gt;
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Converts all characters to UPPERCASE
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card transform-card">
+                    <div class="card-header bg-success text-white text-center">
+                        <h4 class="mb-0">text-lowercase</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="text-lowercase display-6 mb-3">HELLO WORLD</p>
+                        <div class="example-text">
+                            <span class="text-lowercase">THIS IS A SAMPLE SENTENCE WITH TEXT-LOWERCASE CLASS.</span>
+                        </div>
+                        <div class="code-preview mt-3">
+                            &lt;p class="text-lowercase"&gt;<br>
+                            &nbsp;&nbsp;HELLO WORLD<br>
+                            &lt;/p&gt;
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Converts all characters to lowercase
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card transform-card">
+                    <div class="card-header bg-info text-white text-center">
+                        <h4 class="mb-0">text-capitalize</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="text-capitalize display-6 mb-3">hello world example</p>
+                        <div class="example-text">
+                            <span class="text-capitalize">this is a sample sentence. it capitalizes first letter of each word.</span>
+                        </div>
+                        <div class="code-preview mt-3">
+                            &lt;p class="text-capitalize"&gt;<br>
+                            &nbsp;&nbsp;hello world example<br>
+                            &lt;/p&gt;
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Capitalizes the first letter of each word
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Practical Examples -->
+        <h2 class="mb-4">Practical Use Cases</h2>
+        
+        <div class="row g-4">
+            <!-- Navigation Menu Example -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0">Navigation Menu (text-uppercase)</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#"><span class="text-uppercase">Home</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><span class="text-uppercase">About Us</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><span class="text-uppercase">Our Services</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><span class="text-uppercase">Contact</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Labels Example -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0">Form Labels (text-capitalize)</h5>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label text-capitalize">first name</label>
+                                <input type="text" class="form-control" placeholder="Enter your first name">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-capitalize">last name</label>
+                                <input type="text" class="form-control" placeholder="Enter your last name">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-capitalize">email address</label>
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button Styles -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0">Button Text Transform</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex gap-3 flex-wrap">
+                            <button class="btn btn-primary text-uppercase">uppercase button</button>
+                            <button class="btn btn-success text-capitalize">capitalize button text</button>
+                            <button class="btn btn-info text-lowercase">LOWERCASE BUTTON</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Titles -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0">Card Titles (text-uppercase)</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-uppercase">feature one</h5>
+                                        <p class="card-text">Description of feature one</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-uppercase">feature two</h5>
+                                        <p class="card-text">Description of feature two</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Demo -->
+        <div class="card mt-4">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0"><i class="bi bi-pencil-square"></i> Interactive Text Transform Demo</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Enter your text:</label>
+                        <input type="text" class="form-control" id="inputText" value="hello world! this is a demo.">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Select transform:</label>
+                        <select class="form-select" id="transformSelect">
+                            <option value="text-none">None (original)</option>
+                            <option value="text-uppercase">text-uppercase</option>
+                            <option value="text-lowercase">text-lowercase</option>
+                            <option value="text-capitalize">text-capitalize</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <div class="alert alert-info" id="outputText">
+                        <strong>Transformed Text:</strong><br>
+                        <span class="fs-3" id="transformedText">hello world! this is a demo.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="card mt-4">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">Text Transform Comparison</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-light">
+                            <tr><th>Class</th><th>Input</th><th>Output</th><th>Use Case</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-uppercase">
+                                <td><code>.text-uppercase</code></td>
+                                <td>Hello World</td>
+                                <td>HELLO WORLD</td>
+                                <td>Headings, navigation menus, emphasis</td>
+                            </tr>
+                            <tr class="text-lowercase">
+                                <td><code>.text-lowercase</code></td>
+                                <td>HELLO WORLD</td>
+                                <td>hello world</td>
+                                <td>User input normalization, consistent styling</td>
+                            </tr>
+                            <tr class="text-capitalize">
+                                <td><code>.text-capitalize</code></td>
+                                <td>hello world example</td>
+                                <td>Hello World Example</td>
+                                <td>Names, titles, proper nouns</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="alert alert-info mt-4">
+            <strong><i class="bi bi-lightbulb"></i> Best Practices:</strong>
+            <ul class="mb-0 mt-2">
+                <li>Use <code>text-uppercase</code> for navigation menus and buttons for emphasis</li>
+                <li>Use <code>text-capitalize</code> for names, titles, and proper nouns</li>
+                <li>Use <code>text-lowercase</code> for normalizing user input or email addresses</li>
+                <li>Combine with other text utilities like <code>fw-bold</code> for better visual hierarchy</li>
+                <li>Be consistent with text transform across your application</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-4">
+        <div class="container">
+            <p class="mb-0">Exercise 7.2 - Text Transform Utilities (text-uppercase, text-lowercase, text-capitalize) | CTS Digital Nurture 5.0</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const inputText = document.getElementById('inputText');
+        const transformSelect = document.getElementById('transformSelect');
+        const transformedText = document.getElementById('transformedText');
+
+        function updateText() {
+            let text = inputText.value;
+            const transform = transformSelect.value;
+            
+            // Remove existing classes
+            transformedText.className = 'fs-3';
+            
+            if (transform !== 'text-none') {
+                transformedText.classList.add(transform);
+            }
+            
+            // Apply transform for display
+            if (transform === 'text-uppercase') {
+                transformedText.textContent = text;
+            } else if (transform === 'text-lowercase') {
+                transformedText.textContent = text;
+            } else if (transform === 'text-capitalize') {
+                transformedText.textContent = text;
+            } else {
+                transformedText.textContent = text;
+            }
+        }
+
+        inputText.addEventListener('input', updateText);
+        transformSelect.addEventListener('change', updateText);
+        updateText();
+    </script>
+</body>
+</html>

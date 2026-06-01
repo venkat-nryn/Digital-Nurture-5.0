@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2.1 - Bootstrap Directory Structure Explorer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        .folder-structure {
+            background-color: #2d2d2d;
+            border-radius: 10px;
+            padding: 20px;
+            color: #f8f9fa;
+            font-family: 'Courier New', monospace;
+        }
+        .folder {
+            color: #ffd966;
+        }
+        .file {
+            color: #6ea8fe;
+        }
+        .purpose-card {
+            border-left: 4px solid;
+            transition: all 0.3s;
+        }
+        .purpose-card:hover {
+            transform: translateY(-5px);
+        }
+        .tree-line {
+            margin-left: 20px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid bg-dark text-white py-4 mb-4">
+        <div class="container">
+            <h1 class="display-5">📁 Bootstrap Directory Structure Explorer</h1>
+            <p class="lead">Understanding the organization and purpose of Bootstrap's core files</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="card shadow-lg mb-4">
+                    <div class="card-header bg-dark text-white">
+                        <h4 class="mb-0"><i class="bi bi-folder-symlink"></i> Complete Bootstrap Directory Structure</h4>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="folder-structure">
+                            <div><span class="folder">📁 bootstrap-5.3.0-dist/</span></div>
+                            <div class="tree-line">
+                                <div><span class="folder">📁 css/</span></div>
+                                <div class="tree-line">
+                                    <div><span class="file">📄 bootstrap.css</span> <span class="text-muted">(full version - 200KB)</span></div>
+                                    <div><span class="file">📄 bootstrap.min.css</span> <span class="text-muted">(minified - 160KB)</span></div>
+                                    <div><span class="file">📄 bootstrap-grid.css</span> <span class="text-muted">(grid only - 40KB)</span></div>
+                                    <div><span class="file">📄 bootstrap-grid.min.css</span> <span class="text-muted">(minified grid)</span></div>
+                                    <div><span class="file">📄 bootstrap-utilities.css</span> <span class="text-muted">(utilities only)</span></div>
+                                    <div><span class="file">📄 bootstrap-utilities.min.css</span></div>
+                                    <div><span class="file">📄 bootstrap-reboot.css</span> <span class="text-muted">(normalize/reset)</span></div>
+                                    <div><span class="file">📄 bootstrap-reboot.min.css</span></div>
+                                </div>
+                                <div><span class="folder">📁 js/</span></div>
+                                <div class="tree-line">
+                                    <div><span class="file">📄 bootstrap.bundle.js</span> <span class="text-muted">(with Popper)</span></div>
+                                    <div><span class="file">📄 bootstrap.bundle.min.js</span> <span class="text-muted">(minified bundle)</span></div>
+                                    <div><span class="file">📄 bootstrap.js</span> <span class="text-muted">(core only)</span></div>
+                                    <div><span class="file">📄 bootstrap.min.js</span> <span class="text-muted">(minified core)</span></div>
+                                    <div><span class="file">📄 bootstrap.esm.js</span> <span class="text-muted">(ES module)</span></div>
+                                </div>
+                                <div><span class="folder">📁 icons/</span> <span class="text-muted">(Bootstrap Icons v1.10.0)</span></div>
+                                <div class="tree-line">
+                                    <div><span class="file">📄 bootstrap-icons.svg</span> <span class="text-muted">(icon sprite)</span></div>
+                                    <div><span class="file">📄 bootstrap-icons.css</span> <span class="text-muted">(icon styles)</span></div>
+                                    <div><span class="file">📄 bootstrap-icons.woff2</span> <span class="text-muted">(font file)</span></div>
+                                    <div><span class="folder">📁 fonts/</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="row">
+                    <!-- CSS Folder Purpose -->
+                    <div class="col-md-12 mb-4">
+                        <div class="card purpose-card" style="border-left-color: #0d6efd;">
+                            <div class="card-body">
+                                <h3><i class="bi bi-filetype-css text-primary"></i> CSS Folder Purpose</h3>
+                                <p class="lead">Contains all stylesheet files for Bootstrap's visual components</p>
+                                <table class="table table-hover">
+                                    <thead class="table-light">
+                                        <tr><th>File</th><th>Purpose</th><th>Use Case</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>bootstrap.min.css</td><td>Complete Bootstrap styles</td><td>Full framework usage</td></tr>
+                                        <tr><td>bootstrap-grid.min.css</td><td>Grid system only</td><td>When only grid needed</td></tr>
+                                        <tr><td>bootstrap-utilities.min.css</td><td>Utility classes only</td><td>Custom components + utilities</td></tr>
+                                        <tr><td>bootstrap-reboot.min.css</td><td>Reset/normalize styles</td><td>Base styling only</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JS Folder Purpose -->
+                    <div class="col-md-12 mb-4">
+                        <div class="card purpose-card" style="border-left-color: #198754;">
+                            <div class="card-body">
+                                <h3><i class="bi bi-filetype-js text-success"></i> JS Folder Purpose</h3>
+                                <p class="lead">JavaScript plugins for interactive components</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5>Bundle Includes:</h5>
+                                        <ul>
+                                            <li>Modal</li>
+                                            <li>Dropdown</li>
+                                            <li>Tooltip</li>
+                                            <li>Popover</li>
+                                            <li>Collapse</li>
+                                            <li>Carousel</li>
+                                            <li>Tab</li>
+                                            <li>Alert</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="alert alert-info">
+                                            <strong>Note:</strong> bootstrap.bundle.js includes Popper.js (required for tooltips and popovers)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Icons Folder Purpose -->
+                    <div class="col-md-12">
+                        <div class="card purpose-card" style="border-left-color: #ffc107;">
+                            <div class="card-body">
+                                <h3><i class="bi bi-grid-3x3-gap-fill text-warning"></i> Icons Folder Purpose</h3>
+                                <p class="lead">SVG icon library with over 1,800 icons</p>
+                                <div class="row text-center">
+                                    <div class="col-3"><i class="bi bi-house-door fs-1"></i><br>Home</div>
+                                    <div class="col-3"><i class="bi bi-envelope fs-1"></i><br>Mail</div>
+                                    <div class="col-3"><i class="bi bi-gear fs-1"></i><br>Settings</div>
+                                    <div class="col-3"><i class="bi bi-person fs-1"></i><br>Profile</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- File Size Comparison -->
+        <div class="card mt-4">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0">File Size Comparison & Optimization</h4>
+            </div>
+            <div class="card-body">
+                <canvas id="sizeChart" height="100"></canvas>
+                <table class="table table-striped mt-3">
+                    <thead>
+                        <tr><th>File Type</th><th>Unminified</th><th>Minified</th><th>Gzipped</th><th>Reduction</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Complete CSS</td><td>200KB</td><td>160KB</td><td>25KB</td><td>87.5%</td></tr>
+                        <tr><td>Grid Only</td><td>40KB</td><td>30KB</td><td>8KB</td><td>80%</td></tr>
+                        <tr><td>JS Bundle</td><td>80KB</td><td>60KB</td><td>20KB</td><td>75%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">Exercise 2.1 - Bootstrap Directory Structure Explorer | CTS Digital Nurture 5.0</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

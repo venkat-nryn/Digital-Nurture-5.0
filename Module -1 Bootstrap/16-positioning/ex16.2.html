@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 16.2 - Position Relative and Absolute for Badge Overlay</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        .image-container {
+            position: relative;
+            display: inline-block;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+        .sale-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #dc3545;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+        .overlay-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .heart-icon {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: white;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+        .heart-icon:hover {
+            transform: scale(1.1);
+            background: #ff4757;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4">Position Utilities for Badge Overlays</h1>
+            <p class="lead">Using <code>position-relative</code> and <code>position-absolute</code> to overlay badges on images</p>
+        </div>
+
+        <!-- Product Cards with Badge Overlays -->
+        <h2 class="mb-3"><i class="bi bi-tag"></i> Product Badges</h2>
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="image-container w-100">
+                    <img src="https://picsum.photos/id/20/400/300" alt="Product">
+                    <div class="product-badge bg-warning text-dark">Best Seller</div>
+                    <div class="sale-badge">-20% OFF</div>
+                    <div class="heart-icon">
+                        <i class="bi bi-heart"></i>
+                    </div>
+                    <div class="overlay-text">
+                        <h5 class="mb-0">Premium Product</h5>
+                        <small>$199.99</small>
+                    </div>
+                </div>
+                <div class="mt-2 text-center">
+                    <h6>Wireless Headphones</h6>
+                    <div class="text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="image-container w-100">
+                    <img src="https://picsum.photos/id/26/400/300" alt="Product">
+                    <div class="product-badge bg-success">New Arrival</div>
+                    <div class="heart-icon">
+                        <i class="bi bi-heart"></i>
+                    </div>
+                    <div class="overlay-text">
+                        <h5 class="mb-0">Smart Watch</h5>
+                        <small>$299.99</small>
+                    </div>
+                </div>
+                <div class="mt-2 text-center">
+                    <h6>Smart Watch Series 5</h6>
+                    <div class="text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="image-container w-100">
+                    <img src="https://picsum.photos/id/30/400/300" alt="Product">
+                    <div class="product-badge bg-danger">Limited Edition</div>
+                    <div class="sale-badge" style="background: #ff4757;">Sold Out</div>
+                    <div class="heart-icon">
+                        <i class="bi bi-heart"></i>
+                    </div>
+                    <div class="overlay-text">
+                        <h5 class="mb-0">Premium Camera</h5>
+                        <small>$1,299.99</small>
+                    </div>
+                </div>
+                <div class="mt-2 text-center">
+                    <h6>DSLR Camera Pro</h6>
+                    <div class="text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media Profile Example -->
+        <h2 class="mb-3"><i class="bi bi-person-circle"></i> Profile Badge Overlay</h2>
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-6">
+                <div class="card text-center">
+                    <div class="position-relative">
+                        <img src="https://picsum.photos/id/64/600/200" class="card-img-top" alt="Cover" style="height: 150px; object-fit: cover;">
+                        <div class="position-absolute top-100 start-50 translate-middle">
+                            <div class="position-relative">
+                                <img src="https://picsum.photos/id/64/120/120" class="rounded-circle border border-3 border-white" width="100" height="100" alt="Profile">
+                                <span class="position-absolute bottom-0 end-0">
+                                    <span class="badge bg-success rounded-circle p-2 border border-2 border-white">
+                                        <i class="bi bi-check-lg"></i>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body mt-5 pt-3">
+                        <h5 class="card-title">Sarah Johnson</h5>
+                        <p class="text-muted">Senior Product Designer</p>
+                        <div class="d-flex justify-content-center gap-3">
+                            <span><i class="bi bi-envelope"></i> 1.2k</span>
+                            <span><i class="bi bi-people"></i> 345</span>
+                            <span><i class="bi bi-camera"></i> 89</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification Badges -->
+        <h2 class="mb-3"><i class="bi bi-bell"></i> Notification Badges</h2>
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body position-relative">
+                        <i class="bi bi-envelope fs-1"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            99+
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                        <h5 class="mt-3">Messages</h5>
+                        <p class="mb-0">You have 99+ unread messages</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body position-relative">
+                        <i class="bi bi-bell fs-1"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">
+                            12
+                            <span class="visually-hidden">notifications</span>
+                        </span>
+                        <h5 class="mt-3">Notifications</h5>
+                        <p class="mb-0">12 new notifications</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body position-relative">
+                        <i class="bi bi-cart fs-1"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                            3
+                            <span class="visually-hidden">items in cart</span>
+                        </span>
+                        <h5 class="mt-3">Shopping Cart</h5>
+                        <p class="mb-0">3 items in your cart</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Position Reference -->
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">Position Utilities Reference</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Class</th>
+                                <th>Property</th>
+                                <th>Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>.position-relative</code></td>
+                                <td>position: relative</td>
+                                <td>Parent container for absolute positioning</td>
+                            </tr>
+                            <tr>
+                                <td><code>.position-absolute</code></td>
+                                <td>position: absolute</td>
+                                <td>Overlay elements (badges, tooltips)</td>
+                            </tr>
+                            <tr>
+                                <td><code>.top-0</code>, <code>.bottom-0</code>, etc.</td>
+                                <td>top: 0, bottom: 0, etc.</td>
+                                <td>Position absolute elements at edges</td>
+                            </tr>
+                            <tr>
+                                <td><code>.start-0</code>, <code>.end-0</code></td>
+                                <td>left: 0, right: 0</td>
+                                <td>Position absolute elements horizontally</td>
+                            </tr>
+                            <tr>
+                                <td><code>.translate-middle</code></td>
+                                <td>transform: translate(-50%, -50%)</td>
+                                <td>Center absolute positioned elements</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Heart icon toggle functionality
+        document.querySelectorAll('.heart-icon').forEach(heart => {
+            heart.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('bi-heart')) {
+                    icon.classList.remove('bi-heart');
+                    icon.classList.add('bi-heart-fill');
+                    this.style.background = '#ff4757';
+                    this.style.color = 'white';
+                } else {
+                    icon.classList.remove('bi-heart-fill');
+                    icon.classList.add('bi-heart');
+                    this.style.background = 'white';
+                    this.style.color = 'black';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

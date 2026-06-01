@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6.1 - Responsive Navbar with Flexbox Utilities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        .custom-navbar {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 15px 0;
+            transition: all 0.3s;
+        }
+        .nav-link-custom {
+            color: white !important;
+            padding: 10px 20px !important;
+            transition: all 0.3s;
+            border-radius: 8px;
+        }
+        .nav-link-custom:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateX(5px);
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        .logo span {
+            color: #00f2fe;
+        }
+        .demo-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .flex-demo {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 768px) {
+            .custom-navbar .d-flex {
+                flex-direction: column !important;
+                text-align: center;
+            }
+            .nav-link-custom:hover {
+                transform: none;
+                background: rgba(255,255,255,0.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Responsive Navbar using d-flex, flex-column, flex-md-row -->
+    <nav class="custom-navbar">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <a href="#" class="logo mb-3 mb-md-0">
+                    <i class="bi bi-bootstrap-fill"></i> Flex<span>Nav</span>
+                </a>
+                
+                <div class="d-flex flex-column flex-md-row gap-2">
+                    <a href="#" class="nav-link-custom"><i class="bi bi-house-door"></i> Home</a>
+                    <a href="#" class="nav-link-custom"><i class="bi bi-info-circle"></i> About</a>
+                    <a href="#" class="nav-link-custom"><i class="bi bi-briefcase"></i> Services</a>
+                    <a href="#" class="nav-link-custom"><i class="bi bi-envelope"></i> Contact</a>
+                </div>
+                
+                <div class="mt-3 mt-md-0">
+                    <button class="btn btn-outline-light">
+                        <i class="bi bi-box-arrow-in-right"></i> Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <div class="text-center mb-5">
+            <h1 class="display-4">Responsive Navbar with Flexbox</h1>
+            <p class="lead">Using <code>d-flex</code>, <code>flex-column</code>, and <code>flex-md-row</code></p>
+            <div class="alert alert-info d-inline-block">
+                <i class="bi bi-phone"></i> Resize your browser to see the navbar adapt!
+            </div>
+        </div>
+
+        <!-- Flexbox Direction Examples -->
+        <h2 class="mb-3">Flex Direction Classes</h2>
+        <div class="row g-3 mb-4">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">flex-row (Default)</div>
+                    <div class="card-body">
+                        <div class="d-flex flex-row gap-2">
+                            <span class="badge bg-primary">1</span>
+                            <span class="badge bg-primary">2</span>
+                            <span class="badge bg-primary">3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header bg-success text-white">flex-column</div>
+                    <div class="card-body">
+                        <div class="d-flex flex-column gap-2">
+                            <span class="badge bg-success">1</span>
+                            <span class="badge bg-success">2</span>
+                            <span class="badge bg-success">3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header bg-info text-white">flex-row-reverse</div>
+                    <div class="card-body">
+                        <div class="d-flex flex-row-reverse gap-2">
+                            <span class="badge bg-info">1</span>
+                            <span class="badge bg-info">2</span>
+                            <span class="badge bg-info">3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header bg-warning">flex-column-reverse</div>
+                    <div class="card-body">
+                        <div class="d-flex flex-column-reverse gap-2">
+                            <span class="badge bg-warning">1</span>
+                            <span class="badge bg-warning">2</span>
+                            <span class="badge bg-warning">3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Responsive Flex Direction Demo -->
+        <h2 class="mb-3">Responsive Flex Direction</h2>
+        <div class="demo-section">
+            <div class="flex-demo">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 p-3 bg-light rounded">
+                    <div class="bg-primary text-white p-3 rounded text-center flex-grow-1">Item 1</div>
+                    <div class="bg-success text-white p-3 rounded text-center flex-grow-1">Item 2</div>
+                    <div class="bg-info text-white p-3 rounded text-center flex-grow-1">Item 3</div>
+                </div>
+                <p class="text-muted mt-2 small">
+                    <strong>Behavior:</strong> Stacked vertically on mobile (flex-column), horizontal on tablet+ (flex-md-row)
+                </p>
+            </div>
+        </div>
+
+        <!-- More Navbar Examples -->
+        <h2 class="mb-3 mt-5">More Navbar Variations</h2>
+        
+        <div class="row g-4">
+            <!-- Centered Navbar -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">Centered Navbar (flex-column on mobile)</div>
+                    <div class="card-body">
+                        <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                            <a href="#" class="btn btn-outline-primary">Home</a>
+                            <a href="#" class="btn btn-outline-primary">Products</a>
+                            <a href="#" class="btn btn-outline-primary">Pricing</a>
+                            <a href="#" class="btn btn-outline-primary">Support</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right-aligned Navbar -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">Right-aligned Navbar</div>
+                    <div class="card-body">
+                        <div class="d-flex flex-column flex-md-row justify-content-md-end gap-3">
+                            <a href="#" class="btn btn-outline-success">Home</a>
+                            <a href="#" class="btn btn-outline-success">About</a>
+                            <a href="#" class="btn btn-outline-success">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Complex Navbar with Search -->
+        <div class="card mt-4">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Complex Navbar with Search</h4>
+            </div>
+            <div class="card-body">
+                <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3">
+                    <div class="d-flex gap-3 flex-wrap justify-content-center">
+                        <a href="#" class="text-decoration-none">Home</a>
+                        <a href="#" class="text-decoration-none">Products</a>
+                        <a href="#" class="text-decoration-none">Services</a>
+                        <a href="#" class="text-decoration-none">Blog</a>
+                    </div>
+                    <div class="d-flex gap-2 w-100 w-lg-auto">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <button class="btn btn-primary">Go</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flexbox Utilities Reference -->
+        <div class="card mt-4">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-0">Flexbox Utility Classes Reference</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-light">
+                            <tr><th>Category</th><th>Classes</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Direction</td>
+                                <td><code>flex-row</code>, <code>flex-column</code>, <code>flex-row-reverse</code>, <code>flex-column-reverse</code></td>
+                                <td>Sets flex direction</td>
+                            </tr>
+                            <tr><td>Justify Content</td>
+                                <td><code>justify-content-start</code>, <code>justify-content-center</code>, <code>justify-content-end</code>, <code>justify-content-between</code>, <code>justify-content-around</code></td>
+                                <td>Horizontal alignment of flex items</td>
+                            </tr>
+                            <tr><td>Align Items</td>
+                                <td><code>align-items-start</code>, <code>align-items-center</code>, <code>align-items-end</code>, <code>align-items-stretch</code></td>
+                                <td>Vertical alignment of flex items</td>
+                            </tr>
+                            <tr><td>Wrap</td>
+                                <td><code>flex-wrap</code>, <code>flex-nowrap</code>, <code>flex-wrap-reverse</code></td>
+                                <td>Controls wrapping behavior</td>
+                            </tr>
+                            <tr><td>Gap</td>
+                                <td><code>gap-0</code> through <code>gap-5</code></td>
+                                <td>Spacing between flex items</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Demo -->
+        <div class="card mt-4">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0"><i class="bi bi-controller"></i> Live Flexbox Demo</h4>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label>Flex Direction:</label>
+                        <select class="form-select" id="flexDirection">
+                            <option value="flex-row">flex-row (Horizontal)</option>
+                            <option value="flex-column">flex-column (Vertical)</option>
+                            <option value="flex-row-reverse">flex-row-reverse</option>
+                            <option value="flex-column-reverse">flex-column-reverse</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Justify Content:</label>
+                        <select class="form-select" id="justifyContent">
+                            <option value="justify-content-start">justify-content-start</option>
+                            <option value="justify-content-center">justify-content-center</option>
+                            <option value="justify-content-end">justify-content-end</option>
+                            <option value="justify-content-between">justify-content-between</option>
+                            <option value="justify-content-around">justify-content-around</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Align Items:</label>
+                        <select class="form-select" id="alignItems">
+                            <option value="align-items-start">align-items-start</option>
+                            <option value="align-items-center">align-items-center</option>
+                            <option value="align-items-end">align-items-end</option>
+                            <option value="align-items-stretch">align-items-stretch</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="d-flex p-3 border rounded" id="liveFlexDemo" style="min-height: 200px;">
+                    <div class="bg-primary text-white p-3 m-1 rounded">Item 1</div>
+                    <div class="bg-success text-white p-3 m-1 rounded">Item 2</div>
+                    <div class="bg-info text-white p-3 m-1 rounded">Item 3</div>
+                </div>
+                <div class="code-block bg-dark text-white p-3 rounded mt-3">
+                    <code id="flexCode">&lt;div class="d-flex flex-row justify-content-start align-items-start"&gt;</code>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">Exercise 6.1 - Responsive Navbar with Flexbox Utilities | CTS Digital Nurture 5.0</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const flexDirection = document.getElementById('flexDirection');
+        const justifyContent = document.getElementById('justifyContent');
+        const alignItems = document.getElementById('alignItems');
+        const liveFlexDemo = document.getElementById('liveFlexDemo');
+        const flexCode = document.getElementById('flexCode');
+
+        function updateFlexDemo() {
+            const direction = flexDirection.value;
+            const justify = justifyContent.value;
+            const align = alignItems.value;
+            
+            liveFlexDemo.className = `d-flex p-3 border rounded ${direction} ${justify} ${align}`;
+            flexCode.innerHTML = `&lt;div class="d-flex ${direction} ${justify} ${align}"&gt;`;
+        }
+
+        flexDirection.addEventListener('change', updateFlexDemo);
+        justifyContent.addEventListener('change', updateFlexDemo);
+        alignItems.addEventListener('change', updateFlexDemo);
+        updateFlexDemo();
+    </script>
+</body>
+</html>
